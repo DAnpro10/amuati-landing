@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amua TI — Tecnologia que resolve de verdade</title>
+    <meta
+      name="description"
+      content="Landing page institucional da Amua TI com visual premium, foco em conversão e captura de leads."
+    />
+    <style>
+      :root {
+        --bg: #05060a;
+        --bg-2: #0b1020;
+        --card: rgba(255, 255, 255, 0.06);
+        --card-2: rgba(255, 255, 255, 0.09);
+        --line: rgba(255, 255, 255, 0.12);
+        --text: #f5f7fb;
+        --muted: rgba(245, 247, 251, 0.74);
+        --accent: #40d3ff;
+        --accent-2: #7c5cff;
+        --ok: #5cf2a0;
+        --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+        --radius: 22px;
+        --max: 1180px;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background:
+          radial-gradient(900px 500px at 12% 10%, rgba(64, 211, 255, 0.18), transparent 45%),
+          radial-gradient(900px 520px at 88% 18%, rgba(124, 92, 255, 0.2), transparent 42%),
+          linear-gradient(180deg, #05060a 0%, #090d18 100%);
+        color: var(--text);
+      }
+
+      a { color: inherit; text-decoration: none; }
+      .wrap {
+        width: min(var(--max), calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        backdrop-filter: blur(18px);
+        background: rgba(5, 6, 10, 0.65);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 16px 0;
+      }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+        letter-spacing: 0.2px;
+      }
+      .brand-badge {
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        box-shadow: 0 12px 30px rgba(64, 211, 255, 0.24);
+        display: grid;
+        place-items: center;
+        color: #001018;
+        font-weight: 900;
+      }
+      .nav-links {
+        display: flex;
+        gap: 20px;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      .nav-links a:hover { color: var(--text); }
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border: 1px solid rgba(255,255,255,0.14);
+        background: linear-gradient(135deg, rgba(64,211,255,0.18), rgba(124,92,255,0.16));
+        color: var(--text);
+        padding: 12px 18px;
+        border-radius: 999px;
+        box-shadow: var(--shadow);
+        transition: transform .18s ease, border-color .18s ease, background .18s ease;
+        white-space: nowrap;
+      }
+      .cta:hover { transform: translateY(-1px); border-color: rgba(255,255,255,0.28); }
+      .cta.primary {
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        color: #041018;
+        font-weight: 800;
+      }
+
+      .hero {
+        padding: 84px 0 36px;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 28px;
+        align-items: center;
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: rgba(255,255,255,.86);
+        background: rgba(255,255,255,0.06);
+        border: 1px solid var(--line);
+        padding: 10px 14px;
+        border-radius: 999px;
+        margin-bottom: 18px;
+      }
+      .eyebrow::before {
+        content: "";
+        width: 9px; height: 9px;
+        border-radius: 999px;
+        background: var(--ok);
+        box-shadow: 0 0 0 6px rgba(92, 242, 160, 0.12);
+      }
+      h1 {
+        margin: 0;
+        font-size: clamp(2.5rem, 6vw, 5.2rem);
+        line-height: 0.95;
+        letter-spacing: -0.06em;
+      }
+      h1 em {
+        font-style: normal;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .lead {
+        margin: 22px 0 0;
+        max-width: 62ch;
+        font-size: 1.08rem;
+        line-height: 1.7;
+        color: var(--muted);
+      }
+      .hero-actions {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-top: 28px;
+      }
+      .micro {
+        margin-top: 14px;
+        color: rgba(245,247,251,0.56);
+        font-size: 0.95rem;
+      }
+
+      .panel {
+        background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+        border: 1px solid var(--line);
+        border-radius: 30px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+      .panel-top {
+        padding: 22px 22px 16px;
+        border-bottom: 1px solid var(--line);
+      }
+      .panel-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        font-weight: 700;
+      }
+      .badge {
+        font-size: 0.82rem;
+        color: #041018;
+        background: linear-gradient(135deg, #8ef0ff, #b4a0ff);
+        padding: 7px 10px;
+        border-radius: 999px;
+        font-weight: 800;
+      }
+      .panel-body {
+        padding: 22px;
+      }
+      .metrics {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+      .metric {
+        background: rgba(255,255,255,0.05);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 16px;
+      }
+      .metric b {
+        display: block;
+        font-size: 1.6rem;
+        margin-bottom: 4px;
+      }
+      .metric span { color: var(--muted); font-size: 0.93rem; }
+      .checklist {
+        margin: 18px 0 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 12px;
+      }
+      .checklist li {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        color: var(--muted);
+      }
+      .checklist li::before {
+        content: "✓";
+        flex: 0 0 auto;
+        width: 22px;
+        height: 22px;
+        display: inline-grid;
+        place-items: center;
+        border-radius: 999px;
+        background: rgba(92,242,160,0.14);
+        color: var(--ok);
+        font-weight: 900;
+        margin-top: 1px;
+      }
+
+      section {
+        padding: 34px 0;
+      }
+      .section-head {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 18px;
+      }
+      .section-head h2 {
+        margin: 0;
+        font-size: clamp(1.6rem, 3vw, 2.35rem);
+        letter-spacing: -0.04em;
+      }
+      .section-head p { margin: 0; color: var(--muted); line-height: 1.7; }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+      }
+      .card {
+        padding: 20px;
+        border-radius: var(--radius);
+        background: var(--card);
+        border: 1px solid var(--line);
+      }
+      .card .icon {
+        width: 46px; height: 46px;
+        border-radius: 16px;
+        display: grid; place-items: center;
+        margin-bottom: 14px;
+        background: linear-gradient(135deg, rgba(64,211,255,0.18), rgba(124,92,255,0.22));
+        font-size: 1.2rem;
+      }
+      .card h3 { margin: 0 0 8px; font-size: 1.05rem; }
+      .card p { margin: 0; color: var(--muted); line-height: 1.65; }
+
+      .workflow {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+      }
+      .step {
+        position: relative;
+        padding: 22px;
+        border-radius: var(--radius);
+        background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+        border: 1px solid var(--line);
+      }
+      .step .num {
+        width: 36px; height: 36px;
+        border-radius: 999px;
+        display: grid; place-items: center;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        color: #041018;
+        font-weight: 900;
+        margin-bottom: 12px;
+      }
+      .step h3 { margin: 0 0 8px; }
+      .step p { margin: 0; color: var(--muted); line-height: 1.65; }
+
+      .split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        align-items: stretch;
+      }
+      .quote, .contact {
+        border-radius: 28px;
+        border: 1px solid var(--line);
+        background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+        padding: 24px;
+      }
+      .quote h3, .contact h3 { margin: 0 0 12px; }
+      .quote p, .contact p { margin: 0; color: var(--muted); line-height: 1.7; }
+      .contact form {
+        display: grid;
+        gap: 12px;
+        margin-top: 18px;
+      }
+      .row {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+      input, textarea {
+        width: 100%;
+        padding: 14px 16px;
+        border-radius: 16px;
+        border: 1px solid rgba(255,255,255,0.14);
+        background: rgba(5, 6, 10, 0.55);
+        color: var(--text);
+        outline: none;
+        font: inherit;
+      }
+      textarea { min-height: 120px; resize: vertical; }
+      input::placeholder, textarea::placeholder { color: rgba(245,247,251,0.42); }
+      input:focus, textarea:focus { border-color: rgba(64,211,255,0.55); box-shadow: 0 0 0 4px rgba(64,211,255,0.12); }
+      .footer {
+        padding: 28px 0 42px;
+        color: rgba(245,247,251,0.5);
+        font-size: 0.92rem;
+      }
+      .footer .wrap {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        border-top: 1px solid var(--line);
+        padding-top: 18px;
+      }
+
+      @media (max-width: 980px) {
+        .hero-grid, .cards, .workflow, .split { grid-template-columns: 1fr; }
+        .nav-links { display: none; }
+      }
+      @media (max-width: 640px) {
+        .hero { padding-top: 52px; }
+        .row { grid-template-columns: 1fr; }
+        .metric b { font-size: 1.35rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap nav">
+        <a class="brand" href="#top" aria-label="Amua TI">
+          <span class="brand-badge">A</span>
+          <span>Amua TI</span>
+        </a>
+        <nav class="nav-links" aria-label="Navegação">
+          <a href="#servicos">Serviços</a>
+          <a href="#processo">Como funciona</a>
+          <a href="#diferenciais">Diferenciais</a>
+          <a href="#contato">Contato</a>
+        </nav>
+        <a class="cta primary" href="#contato">Solicitar diagnóstico</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div>
+            <div class="eyebrow">Suporte, infraestrutura e segurança para empresas</div>
+            <h1>Tecnologia que <em>resolve</em>, sustenta e acelera seu negócio.</h1>
+            <p class="lead">
+              A Amua TI entrega suporte próximo, implantação organizada e soluções que deixam sua operação mais estável,
+              mais segura e mais pronta para crescer.
+            </p>
+            <div class="hero-actions">
+              <a class="cta primary" href="#contato">Quero um diagnóstico</a>
+              <a class="cta" href="https://wa.me/5511999999999" target="_blank" rel="noreferrer">Falar no WhatsApp</a>
+            </div>
+            <div class="micro">Landing page de teste — versão inicial pronta para validação visual e comercial.</div>
+          </div>
+
+          <aside class="panel" aria-label="Resumo da proposta Amua TI">
+            <div class="panel-top">
+              <div class="panel-title">
+                <span>Amua TI • proposta de valor</span>
+                <span class="badge">premium</span>
+              </div>
+            </div>
+            <div class="panel-body">
+              <div class="metrics">
+                <div class="metric"><b>24/7</b><span>visão de operação e suporte contínuo</span></div>
+                <div class="metric"><b>100%</b><span>foco em clareza, rapidez e organização</span></div>
+                <div class="metric"><b>4 etapas</b><span>diagnóstico, proposta, implantação e suporte</span></div>
+                <div class="metric"><b>1 objetivo</b><span>tirar tecnologia do caminho e fazê-la funcionar</span></div>
+              </div>
+              <ul class="checklist">
+                <li>Atendimento para pequenas e médias empresas</li>
+                <li>Infraestrutura, redes, segurança e suporte</li>
+                <li>Comunicação clara e solução sem enrolação</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="servicos">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>O que a Amua TI pode entregar</h2>
+            <p>
+              Um pacote de serviços desenhado para ajudar empresas que precisam de confiança técnica, agilidade e uma operação mais previsível.
+            </p>
+          </div>
+          <div class="cards">
+            <article class="card">
+              <div class="icon">⚙️</div>
+              <h3>Suporte técnico</h3>
+              <p>Atendimento remoto e presencial para resolver incidentes, dúvidas e tarefas do dia a dia.</p>
+            </article>
+            <article class="card">
+              <div class="icon">🛡️</div>
+              <h3>Segurança digital</h3>
+              <p>Boas práticas, proteção de acessos e orientação para deixar o ambiente mais seguro.</p>
+            </article>
+            <article class="card">
+              <div class="icon">🌐</div>
+              <h3>Redes e infraestrutura</h3>
+              <p>Organização, estabilidade e ajustes para a base tecnológica funcionar melhor.</p>
+            </article>
+            <article class="card">
+              <div class="icon">☁️</div>
+              <h3>Nuvem e automação</h3>
+              <p>Processos mais simples, integrações e uso inteligente da tecnologia para ganhar eficiência.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="processo">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>Como funciona</h2>
+            <p>Fluxo simples, sem complexidade desnecessária.</p>
+          </div>
+          <div class="workflow">
+            <div class="step">
+              <div class="num">1</div>
+              <h3>Diagnóstico</h3>
+              <p>Entendemos o cenário, as dores e as prioridades do negócio.</p>
+            </div>
+            <div class="step">
+              <div class="num">2</div>
+              <h3>Plano</h3>
+              <p>Montamos uma proposta objetiva, com escopo e próximos passos claros.</p>
+            </div>
+            <div class="step">
+              <div class="num">3</div>
+              <h3>Implantação</h3>
+              <p>Executamos as melhorias com organização, acompanhamento e comunicação simples.</p>
+            </div>
+            <div class="step">
+              <div class="num">4</div>
+              <h3>Suporte contínuo</h3>
+              <p>Seguimos perto para manter a operação estável e evoluindo.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="diferenciais">
+        <div class="wrap split">
+          <article class="quote">
+            <h3>Por que esse estilo funciona</h3>
+            <p>
+              A página usa uma estrutura parecida com a landing de campanha que você mostrou: headline forte, blocos curtos,
+              CTA evidente e uma narrativa direta. Para a Amua TI, a diferença é o tom: mais corporativo, mais confiável e mais comercial.
+            </p>
+          </article>
+          <article class="quote">
+            <h3>Diferenciais sugeridos</h3>
+            <p>
+              Visual premium escuro, chamadas objetivas, prova de processo, foco em conversão e formulário simples para captar leads.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contato">
+        <div class="wrap contact">
+          <h3>Receba uma versão final da Amua TI</h3>
+          <p>
+            Se você quiser, eu também posso adaptar esse teste para a identidade visual definitiva da Amua TI,
+            com texto comercial real e link de WhatsApp/e-mail configurado.
+          </p>
+          <form>
+            <div class="row">
+              <input type="text" placeholder="Seu nome" />
+              <input type="text" placeholder="Empresa" />
+            </div>
+            <div class="row">
+              <input type="email" placeholder="Seu e-mail" />
+              <input type="tel" placeholder="Seu WhatsApp" />
+            </div>
+            <textarea placeholder="Descreva o que sua empresa precisa"></textarea>
+            <a class="cta primary" href="mailto:contato@amuati.com.br?subject=Quero%20um%20diagn%C3%B3stico%20da%20Amua%20TI">Enviar pedido de contato</a>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <span>Amua TI — teste de landing page.</span>
+        <span>Feita para validar layout, linguagem e conversão.</span>
+      </div>
+    </footer>
+  </body>
+</html>
