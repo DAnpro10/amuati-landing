@@ -86,22 +86,39 @@
         padding: 14px 0;
       }
       .brand {
-        display: flex;
+        display: inline-flex;
         align-items: center;
-        gap: 14px;
+        gap: 12px;
         min-width: 0;
       }
-      .brand-logo {
-        width: 228px;
-        max-width: 42vw;
-        height: auto;
-        filter: drop-shadow(0 14px 26px rgba(0, 0, 0, 0.35));
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        flex: none;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.32);
+        border: 1px solid rgba(255, 255, 255, 0.08);
       }
-      .brand-tag {
-        display: none;
+      .brand-copy {
+        display: grid;
+        gap: 2px;
+        min-width: 0;
+      }
+      .brand-copy strong {
+        font-size: 1rem;
+        line-height: 1;
+        letter-spacing: -0.03em;
+      }
+      .brand-copy span {
         color: var(--soft);
-        font-size: 0.9rem;
-        letter-spacing: 0.02em;
+        font-size: 0.8rem;
+        line-height: 1.2;
+      }
+      .nav .brand-copy span {
+        display: none;
+      }
+      .nav .brand-copy strong {
+        font-size: 1.12rem;
       }
       .nav-links {
         display: flex;
@@ -233,18 +250,37 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       }
       .panel-kicker {
-        margin: 0 0 10px;
+        margin: 0 0 12px;
         color: rgba(244, 247, 251, 0.56);
         font-size: 0.82rem;
         letter-spacing: 0.13em;
         text-transform: uppercase;
       }
-      .panel-logo {
-        width: min(100%, 420px);
-        height: auto;
-        border-radius: 18px;
+      .panel-brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .panel-mark {
+        width: 68px;
+        height: 68px;
+        border-radius: 50%;
+        flex: none;
+        box-shadow: 0 16px 34px rgba(0, 0, 0, 0.35);
         border: 1px solid rgba(255, 255, 255, 0.08);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
+      }
+      .panel-title {
+        display: grid;
+        gap: 4px;
+      }
+      .panel-title strong {
+        font-size: 1.18rem;
+        letter-spacing: -0.04em;
+      }
+      .panel-title span {
+        color: var(--muted);
+        font-size: 0.92rem;
+        line-height: 1.5;
       }
       .panel-caption {
         margin-top: 16px;
@@ -438,11 +474,17 @@
       }
       .contact-brand {
         display: grid;
-        gap: 8px;
+        gap: 10px;
       }
-      .contact-brand .brand-logo {
-        width: 210px;
-        max-width: 62vw;
+      .contact-brand .brand-copy strong {
+        font-size: 1.06rem;
+      }
+      .contact-mark {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.32);
+        border: 1px solid rgba(255, 255, 255, 0.08);
       }
       .contact-meta {
         display: grid;
@@ -511,9 +553,8 @@
         display: grid;
         gap: 10px;
       }
-      .footer-brand .brand-logo {
-        width: 180px;
-        max-width: 60vw;
+      .footer-brand .brand-copy strong {
+        font-size: 1.02rem;
       }
       .footer-links {
         display: flex;
@@ -542,18 +583,12 @@
           gap: 12px;
           order: 3;
         }
-        .brand-tag { display: block; }
         .row { grid-template-columns: 1fr; }
         .stats { grid-template-columns: 1fr; }
       }
       @media (max-width: 600px) {
         .nav-links {
           display: none;
-        }
-        .brand-logo,
-        .contact-brand .brand-logo,
-        .footer-brand .brand-logo {
-          width: min(100%, 320px);
         }
         .hero {
           padding-top: 28px;
@@ -575,8 +610,11 @@
     <header>
       <div class="wrap nav">
         <a class="brand" href="#top" aria-label="Amua TI — voltar ao topo">
-          <img class="brand-logo" src="assets/img/amua_ti_logo_brand_crop.jpg" alt="Amua TI" />
-          <span class="brand-tag">Tecnologia que sustenta o seu dia</span>
+          <img class="brand-mark" src="assets/img/amua_ti_favicon.png" alt="" aria-hidden="true" />
+          <span class="brand-copy">
+            <strong>Amua TI</strong>
+            <span>Tecnologia que sustenta o seu dia</span>
+          </span>
         </a>
 
         <nav class="nav-links" aria-label="Navegação">
@@ -618,10 +656,12 @@
           <aside class="panel" aria-label="Resumo da proposta da Amua TI">
             <div class="panel-top">
               <div class="panel-kicker">Marca oficial</div>
-              <img class="panel-logo" src="assets/img/amua_ti_logo_header.jpg" alt="Logo oficial da Amua TI" />
-              <div class="panel-caption">
-                <strong>Tecnologia que sustenta seu dia.</strong>
-                <span>Uma presença visual mais firme, limpa e confiável — com a assinatura correta da marca.</span>
+              <div class="panel-brand">
+                <img class="panel-mark" src="assets/img/amua_ti_favicon.png" alt="" aria-hidden="true" />
+                <div class="panel-title">
+                  <strong>Amua TI</strong>
+                  <span>Tecnologia que sustenta seu dia — com presença limpa, premium e confiável.</span>
+                </div>
               </div>
               <div class="panel-badges" aria-label="Assinaturas da proposta">
                 <span class="badge">Suporte</span>
@@ -758,7 +798,13 @@
                   Conte o cenário da sua empresa e receba um direcionamento claro para diagnóstico, suporte ou melhoria da infraestrutura.
                 </p>
               </div>
-              <img class="brand-logo" src="assets/img/amua_ti_logo_brand_crop.jpg" alt="Amua TI" />
+              <a class="brand" href="#top" aria-label="Amua TI — voltar ao topo">
+                <img class="contact-mark" src="assets/img/amua_ti_favicon.png" alt="" aria-hidden="true" />
+                <span class="brand-copy">
+                  <strong>Amua TI</strong>
+                  <span>Contato e diagnóstico</span>
+                </span>
+              </a>
             </div>
             <div class="contact-meta" aria-label="E-mail e contato rápido">
               <small>E-mail oficial</small>
@@ -801,8 +847,13 @@
     <footer>
       <div class="wrap footer">
         <div class="footer-brand">
-          <img class="brand-logo" src="assets/img/amua_ti_logo_brand_crop.jpg" alt="Amua TI" />
-          <span>Amua TI — tecnologia que sustenta sua operação com clareza e consistência.</span>
+          <a class="brand" href="#top" aria-label="Amua TI — voltar ao topo">
+            <img class="brand-mark" src="assets/img/amua_ti_favicon.png" alt="" aria-hidden="true" />
+            <span class="brand-copy">
+              <strong>Amua TI</strong>
+              <span>Tecnologia que sustenta sua operação com clareza e consistência.</span>
+            </span>
+          </a>
         </div>
         <div class="footer-links" aria-label="Links de contato">
           <a href="#top">Topo</a>
