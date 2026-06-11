@@ -91,13 +91,12 @@
         gap: 12px;
         min-width: 0;
       }
-      .brand-mark {
-        width: 42px;
-        height: 42px;
-        border-radius: 50%;
+      .brand-lockup {
+        width: min(230px, 45vw);
+        height: auto;
+        display: block;
         flex: none;
-        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.32);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.3));
       }
       .brand-copy {
         display: grid;
@@ -476,8 +475,18 @@
         display: grid;
         gap: 10px;
       }
-      .contact-brand .brand-copy strong {
-        font-size: 1.06rem;
+      .contact-signature {
+        display: grid;
+        gap: 3px;
+        margin-top: 2px;
+      }
+      .contact-signature strong {
+        font-size: 1.08rem;
+        letter-spacing: -0.04em;
+      }
+      .contact-signature span {
+        color: var(--muted);
+        font-size: 0.92rem;
       }
       .contact-mark {
         width: 48px;
@@ -610,11 +619,7 @@
     <header>
       <div class="wrap nav">
         <a class="brand" href="#top" aria-label="Amua TI — voltar ao topo">
-          <img class="brand-mark" src="assets/img/amua_ti_favicon.png" alt="" aria-hidden="true" />
-          <span class="brand-copy">
-            <strong>Amua TI</strong>
-            <span>Tecnologia que sustenta o seu dia</span>
-          </span>
+          <img class="brand-lockup" src="assets/img/amua_ti_logo_header.jpg" alt="Amua TI" />
         </a>
 
         <nav class="nav-links" aria-label="Navegação">
@@ -657,7 +662,7 @@
             <div class="panel-top">
               <div class="panel-kicker">Marca oficial</div>
               <div class="panel-brand">
-                <img class="panel-mark" src="assets/img/amua_ti_favicon.png" alt="" aria-hidden="true" />
+                <img class="panel-mark" src="assets/img/amua_ti_logo_brand_crop.jpg" alt="Amua TI" />
                 <div class="panel-title">
                   <strong>Amua TI</strong>
                   <span>Tecnologia que sustenta seu dia — com presença limpa, premium e confiável.</span>
@@ -798,13 +803,10 @@
                   Conte o cenário da sua empresa e receba um direcionamento claro para diagnóstico, suporte ou melhoria da infraestrutura.
                 </p>
               </div>
-              <a class="brand" href="#top" aria-label="Amua TI — voltar ao topo">
-                <img class="contact-mark" src="assets/img/amua_ti_favicon.png" alt="" aria-hidden="true" />
-                <span class="brand-copy">
-                  <strong>Amua TI</strong>
-                  <span>Contato e diagnóstico</span>
-                </span>
-              </a>
+              <div class="contact-signature">
+                <strong>Amua TI</strong>
+                <span>Contato e diagnóstico</span>
+              </div>
             </div>
             <div class="contact-meta" aria-label="E-mail e contato rápido">
               <small>E-mail oficial</small>
@@ -848,12 +850,9 @@
       <div class="wrap footer">
         <div class="footer-brand">
           <a class="brand" href="#top" aria-label="Amua TI — voltar ao topo">
-            <img class="brand-mark" src="assets/img/amua_ti_favicon.png" alt="" aria-hidden="true" />
-            <span class="brand-copy">
-              <strong>Amua TI</strong>
-              <span>Tecnologia que sustenta sua operação com clareza e consistência.</span>
-            </span>
+            <img class="brand-lockup" src="assets/img/amua_ti_logo_header.jpg" alt="Amua TI" />
           </a>
+          <span>Amua TI — tecnologia que sustenta sua operação com clareza e consistência.</span>
         </div>
         <div class="footer-links" aria-label="Links de contato">
           <a href="#top">Topo</a>
