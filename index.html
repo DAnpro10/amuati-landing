@@ -3,187 +3,181 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#06111f" />
-    <link rel="icon" type="image/png" href="assets/img/amua_ti_favicon.png" />
-    <link rel="apple-touch-icon" href="assets/img/amua_ti_favicon.png" />
-    <title>Amua TI — Tecnologia que resolve de verdade</title>
+    <title>Amua TI — Tecnologia que sustenta o seu dia</title>
     <meta
       name="description"
-      content="Landing page institucional da Amua TI com visual premium, foco em conversão e captura de leads."
+      content="Landing premium da Amua TI para apresentar suporte, infraestrutura, segurança digital e automação com visual profissional e confiante."
     />
+    <link rel="icon" type="image/png" href="assets/img/amua_ti_favicon.png" />
+    <link rel="apple-touch-icon" href="assets/img/amua_ti_favicon.png" />
     <style>
       :root {
-        --bg: #050505;
-        --bg-2: #0b0b0b;
-        --card: #111111;
-        --card-2: #161616;
-        --line: rgba(255, 255, 255, 0.12);
-        --line-strong: rgba(255, 255, 255, 0.2);
-        --text: #f4f4f4;
-        --muted: rgba(244, 244, 244, 0.72);
-        --accent: #ffffff;
-        --accent-2: #bdbdbd;
-        --ok: #9be7b6;
-        --shadow: 0 22px 60px rgba(0, 0, 0, 0.45);
-        --radius: 12px;
-        --max: 1200px;
+        --bg: #050608;
+        --bg-2: #080a0f;
+        --panel: rgba(13, 15, 20, 0.86);
+        --panel-strong: rgba(10, 12, 16, 0.96);
+        --line: rgba(255, 255, 255, 0.09);
+        --line-strong: rgba(255, 255, 255, 0.14);
+        --text: #f4f7fb;
+        --muted: rgba(244, 247, 251, 0.7);
+        --soft: rgba(244, 247, 251, 0.5);
+        --accent: #56b9ff;
+        --accent-2: #2f8cff;
+        --ok: #5cf2a0;
+        --shadow: 0 26px 80px rgba(0, 0, 0, 0.45);
+        --radius: 22px;
+        --radius-sm: 16px;
+        --wrap: min(1160px, calc(100vw - 40px));
       }
 
       * { box-sizing: border-box; }
-      html {
-        scroll-behavior: smooth;
-        scroll-padding-top: 92px;
-      }
+      html { scroll-behavior: smooth; }
       body {
         margin: 0;
-        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         background:
-          radial-gradient(900px 500px at 14% 10%, rgba(255, 255, 255, 0.06), transparent 42%),
-          radial-gradient(900px 520px at 86% 18%, rgba(255, 255, 255, 0.04), transparent 40%),
-          linear-gradient(180deg, #050505 0%, #070707 40%, #040404 100%);
+          radial-gradient(circle at 15% 18%, rgba(47, 140, 255, 0.12), transparent 32%),
+          radial-gradient(circle at 82% 12%, rgba(86, 185, 255, 0.08), transparent 28%),
+          radial-gradient(circle at 50% 70%, rgba(255, 255, 255, 0.04), transparent 24%),
+          linear-gradient(180deg, var(--bg), var(--bg-2) 55%, #020305 100%);
         color: var(--text);
+        min-height: 100vh;
+        line-height: 1.55;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: inherit; text-decoration: none; }
+      img { max-width: 100%; display: block; }
+      button, input, textarea { font: inherit; }
+
+      .wrap {
+        width: var(--wrap);
+        margin: 0 auto;
       }
 
-      a { color: inherit; text-decoration: none; }
-      a:focus-visible,
-      input:focus-visible,
-      textarea:focus-visible {
-        outline: 3px solid rgba(19, 166, 241, 0.35);
-        outline-offset: 3px;
+      .skip {
+        position: absolute;
+        left: -9999px;
+        top: auto;
       }
-      .wrap {
-        width: min(var(--max), calc(100% - 32px));
-        margin: 0 auto;
+      .skip:focus {
+        left: 16px;
+        top: 16px;
+        z-index: 1000;
+        background: #fff;
+        color: #000;
+        padding: 10px 14px;
+        border-radius: 12px;
       }
 
       header {
         position: sticky;
         top: 0;
-        z-index: 30;
-        backdrop-filter: blur(20px);
-        background: rgba(3, 3, 3, 0.82);
-        border-bottom: 1px solid rgba(255,255,255,0.08);
+        z-index: 20;
+        backdrop-filter: blur(18px);
+        background: linear-gradient(180deg, rgba(5, 6, 8, 0.95), rgba(5, 6, 8, 0.8));
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
       }
       .nav {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 18px;
-        padding: 16px 0;
+        padding: 14px 0;
       }
       .brand {
-        display: inline-flex;
+        display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 14px;
         min-width: 0;
       }
-      .brand-lockup {
-        display: inline-flex;
-        align-items: center;
-        gap: 12px;
-      }
-      .brand-icon {
-        display: block;
-        width: 42px;
-        height: 42px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 1px solid rgba(255,255,255,0.12);
-        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
-        flex: none;
-      }
       .brand-logo {
-        display: block;
-        width: 176px;
+        width: 228px;
+        max-width: 42vw;
         height: auto;
-        max-width: min(40vw, 176px);
-        filter: drop-shadow(0 8px 22px rgba(0, 0, 0, 0.25));
+        filter: drop-shadow(0 14px 26px rgba(0, 0, 0, 0.35));
       }
-      .brand-text {
-        font-weight: 800;
-        letter-spacing: 0.2px;
-        color: var(--text);
-        white-space: nowrap;
-      }
-      .panel-logo {
-        display: block;
-        width: min(100%, 240px);
-        height: auto;
-        margin: 2px 0 14px;
-        border-radius: 20px;
-        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
-      }
-      .panel-kicker {
-        margin: 0 0 10px;
-        color: rgba(244, 244, 244, 0.64);
-        font-size: 0.84rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
+      .brand-tag {
+        display: none;
+        color: var(--soft);
+        font-size: 0.9rem;
+        letter-spacing: 0.02em;
       }
       .nav-links {
         display: flex;
-        gap: 18px;
-        color: var(--muted);
+        align-items: center;
+        gap: 22px;
+        color: var(--soft);
         font-size: 0.84rem;
-        letter-spacing: 0.08em;
+        letter-spacing: 0.11em;
         text-transform: uppercase;
       }
       .nav-links a:hover { color: var(--text); }
+
       .cta {
         display: inline-flex;
         align-items: center;
         justify-content: center;
         gap: 10px;
-        border: 1px solid rgba(255,255,255,0.18);
-        background: #0f0f0f;
-        color: var(--text);
         padding: 12px 18px;
-        border-radius: 10px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(255, 255, 255, 0.03);
+        color: var(--text);
         box-shadow: none;
-        transition: transform .18s ease, border-color .18s ease, background .18s ease;
+        transition: transform .18s ease, background .18s ease, border-color .18s ease;
         white-space: nowrap;
       }
-      .cta:hover { transform: translateY(-1px); border-color: rgba(255,255,255,0.28); background: #141414; }
+      .cta:hover {
+        transform: translateY(-1px);
+        border-color: rgba(255, 255, 255, 0.24);
+        background: rgba(255, 255, 255, 0.06);
+      }
       .cta.primary {
-        background: #f4f4f4;
-        color: #050505;
+        background: linear-gradient(135deg, #f8fbff, #e9f1ff);
+        color: #050608;
+        border-color: rgba(255, 255, 255, 0.9);
         font-weight: 800;
       }
 
+      main { padding-bottom: 28px; }
+      section { padding: 34px 0; }
+
       .hero {
-        padding: 84px 0 40px;
+        padding-top: 42px;
       }
       .hero-grid {
         display: grid;
-        grid-template-columns: 1.02fr 0.98fr;
-        gap: 40px;
+        grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
+        gap: 30px;
         align-items: center;
       }
       .eyebrow {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        color: rgba(255,255,255,.84);
-        background: rgba(255,255,255,0.04);
-        border: 1px solid rgba(255,255,255,0.12);
-        padding: 10px 14px;
+        padding: 9px 13px;
         border-radius: 999px;
-        margin-bottom: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.04);
+        color: rgba(244, 247, 251, 0.86);
+        font-size: 0.9rem;
         letter-spacing: 0.01em;
       }
       .eyebrow::before {
         content: "";
-        width: 9px; height: 9px;
-        border-radius: 999px;
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
         background: var(--ok);
         box-shadow: 0 0 0 6px rgba(92, 242, 160, 0.12);
       }
       h1 {
-        margin: 0;
-        font-size: clamp(2.7rem, 6vw, 5.5rem);
-        line-height: 0.9;
+        margin: 18px 0 0;
+        font-size: clamp(3rem, 6.3vw, 5.8rem);
+        line-height: 0.92;
         letter-spacing: -0.09em;
-        max-width: 9ch;
+        max-width: 9.2ch;
       }
       h1 em {
         font-style: normal;
@@ -193,11 +187,11 @@
         color: transparent;
       }
       .lead {
+        max-width: 46ch;
         margin: 18px 0 0;
-        max-width: 40ch;
-        font-size: 1.06rem;
-        line-height: 1.75;
         color: var(--muted);
+        font-size: 1.08rem;
+        line-height: 1.78;
       }
       .hero-actions {
         display: flex;
@@ -205,309 +199,269 @@
         flex-wrap: wrap;
         margin-top: 24px;
       }
-      .hero-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 14px;
-      }
-      .link-pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 10px 14px;
-        border-radius: 10px;
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        color: var(--muted);
-        font-size: 0.88rem;
-        transition: transform .18s ease, border-color .18s ease, color .18s ease, background .18s ease;
-      }
-      .link-pill:hover {
-        transform: translateY(-1px);
-        border-color: rgba(255, 255, 255, 0.24);
-        color: var(--text);
-        background: rgba(255, 255, 255, 0.07);
-      }
-      .hero-trust {
+      .hero-points {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
         margin-top: 16px;
       }
-      .hero-trust span {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 9px 12px;
-        border-radius: 10px;
+      .point {
+        padding: 10px 12px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
         background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        color: rgba(244, 244, 244, 0.78);
-        font-size: 0.86rem;
+        color: rgba(244, 247, 251, 0.8);
+        font-size: 0.87rem;
       }
       .micro {
-        margin-top: 14px;
-        color: rgba(244,244,244,0.58);
-        font-size: 0.95rem;
+        margin-top: 16px;
+        color: var(--soft);
+        font-size: 0.96rem;
       }
 
       .panel {
+        border-radius: var(--radius);
+        border: 1px solid rgba(255, 255, 255, 0.09);
         background:
-          radial-gradient(circle at top right, rgba(255,255,255,0.08), transparent 28%),
-          linear-gradient(180deg, #121212 0%, #070707 100%);
-        border: 1px solid rgba(255,255,255,0.12);
-        border-radius: 16px;
+          radial-gradient(circle at top right, rgba(86, 185, 255, 0.11), transparent 30%),
+          linear-gradient(180deg, rgba(14, 16, 22, 0.96), rgba(10, 12, 16, 0.98));
         box-shadow: var(--shadow);
         overflow: hidden;
       }
       .panel-top {
-        padding: 20px 20px 14px;
-        border-bottom: 1px solid rgba(255,255,255,0.08);
+        padding: 22px 22px 18px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .panel-kicker {
+        margin: 0 0 10px;
+        color: rgba(244, 247, 251, 0.56);
+        font-size: 0.82rem;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
       }
       .panel-logo {
-        display: block;
-        width: min(100%, 230px);
+        width: min(100%, 420px);
         height: auto;
-        margin: 2px 0 14px;
-        filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.35));
-      }
-      .hero-visual {
-        position: relative;
-        height: 210px;
-        margin-bottom: 14px;
-        border: 1px solid rgba(255,255,255,0.08);
-        border-radius: 14px;
-        overflow: hidden;
-        background:
-          radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08), transparent 28%),
-          radial-gradient(circle at 80% 35%, rgba(255,255,255,0.06), transparent 32%),
-          linear-gradient(180deg, #0d0d0d 0%, #050505 100%);
-      }
-      .hero-visual::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background:
-          radial-gradient(circle at 50% 65%, rgba(255,255,255,0.16) 0 1px, transparent 1.5px) 0 0 / 14px 14px,
-          linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.08) 50%, transparent 60%);
-        opacity: 0.45;
-      }
-      .device {
-        position: absolute;
-        width: 72px;
-        height: 148px;
         border-radius: 18px;
-        border: 1px solid rgba(255,255,255,0.18);
-        background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
-        box-shadow: 0 18px 35px rgba(0,0,0,0.45);
-        backdrop-filter: blur(3px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
       }
-      .device::before {
-        content: "";
-        position: absolute;
-        inset: 12px 10px;
-        border-radius: 12px;
-        background: linear-gradient(180deg, #232323, #111);
-        box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
+      .panel-caption {
+        margin-top: 16px;
+        display: grid;
+        gap: 8px;
       }
-      .device::after {
-        content: "";
-        position: absolute;
-        top: 8px;
-        left: 50%;
-        width: 24px;
-        height: 4px;
-        margin-left: -12px;
-        border-radius: 999px;
-        background: rgba(255,255,255,0.2);
+      .panel-caption strong {
+        font-size: 0.96rem;
+        letter-spacing: 0.01em;
       }
-      .device.d1 { left: 16px; bottom: 18px; transform: rotate(-12deg); }
-      .device.d2 { left: 66px; bottom: 34px; transform: rotate(-5deg); }
-      .device.d3 { left: 122px; bottom: 22px; transform: rotate(5deg); }
-      .device.d4 { left: 178px; bottom: 40px; transform: rotate(12deg); }
-      .device.d5 { left: 232px; bottom: 18px; transform: rotate(18deg); }
-      .hero-visual .halo {
-        position: absolute;
-        right: 16px;
-        top: 26px;
-        width: 98px;
-        height: 98px;
-        border-radius: 50%;
-        border: 1px solid rgba(255,255,255,0.14);
-        box-shadow: inset 0 0 0 10px rgba(255,255,255,0.04);
+      .panel-caption span {
+        color: var(--muted);
+        font-size: 0.95rem;
       }
-      .panel-title {
+      .panel-badges {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 12px;
-        font-weight: 700;
-        font-size: 0.92rem;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 14px;
       }
       .badge {
-        font-size: 0.82rem;
-        color: #041018;
-        background: linear-gradient(135deg, #8fdfff, #8fb7ff);
-        padding: 7px 10px;
+        padding: 8px 10px;
         border-radius: 999px;
-        font-weight: 800;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.03);
+        color: rgba(244, 247, 251, 0.82);
+        font-size: 0.82rem;
       }
       .panel-body {
-        padding: 20px;
+        padding: 18px 22px 22px;
       }
-      .metrics {
+      .stats {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px;
+        gap: 12px;
       }
-      .metric {
-        background: #101010;
-        border: 1px solid rgba(255,255,255,0.09);
-        border-radius: 12px;
+      .stat {
         padding: 16px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
       }
-      .metric b {
+      .stat b {
         display: block;
-        font-size: 1.05rem;
-        margin-bottom: 4px;
-        font-weight: 700;
+        margin-bottom: 6px;
+        font-size: 1rem;
       }
-      .metric span { color: var(--muted); font-size: 0.93rem; }
+      .stat span {
+        color: var(--muted);
+        font-size: 0.94rem;
+        line-height: 1.55;
+      }
       .checklist {
-        margin: 18px 0 0;
+        margin: 16px 0 0;
         padding: 0;
         list-style: none;
         display: grid;
-        gap: 12px;
+        gap: 10px;
       }
       .checklist li {
-        display: flex;
-        gap: 10px;
-        align-items: flex-start;
-        color: var(--muted);
+        position: relative;
+        padding-left: 28px;
+        color: rgba(244, 247, 251, 0.82);
       }
       .checklist li::before {
         content: "✓";
-        flex: 0 0 auto;
-        width: 22px;
-        height: 22px;
-        display: inline-grid;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        display: grid;
         place-items: center;
-        border-radius: 999px;
-        background: rgba(92,242,160,0.14);
+        border-radius: 50%;
+        background: rgba(92, 242, 160, 0.12);
         color: var(--ok);
-        font-weight: 900;
-        margin-top: 1px;
+        font-weight: 700;
       }
 
-      section {
-        padding: 34px 0;
-      }
       .section-head {
-        display: flex;
-        flex-direction: column;
+        display: grid;
         gap: 10px;
         margin-bottom: 18px;
       }
-      .section-head h2 {
+      .section-head h2,
+      .section-head h3 {
         margin: 0;
-        font-size: clamp(1.6rem, 3vw, 2.35rem);
+        font-size: clamp(1.6rem, 2.8vw, 2.3rem);
         letter-spacing: -0.04em;
       }
-      .section-head p { margin: 0; color: var(--muted); line-height: 1.7; }
+      .section-head p {
+        margin: 0;
+        color: var(--muted);
+        max-width: 62ch;
+      }
+
       .cards {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 16px;
+        gap: 14px;
+      }
+      .card,
+      .step,
+      .quote,
+      .contact {
+        border-radius: var(--radius-sm);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: var(--panel);
+        box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
       }
       .card {
-        padding: 20px;
-        border-radius: var(--radius);
-        background: #101010;
-        border: 1px solid rgba(255,255,255,0.09);
+        padding: 18px;
+        min-height: 196px;
       }
-      .card .icon {
-        width: 46px; height: 46px;
-        border-radius: 16px;
-        display: grid; place-items: center;
+      .icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.08);
         margin-bottom: 14px;
-        background: linear-gradient(135deg, rgba(64,211,255,0.18), rgba(124,92,255,0.22));
-        font-size: 1.2rem;
+        font-size: 1rem;
       }
-      .card h3 { margin: 0 0 8px; font-size: 1rem; }
-      .card p { margin: 0; color: var(--muted); line-height: 1.65; }
+      .card h3 {
+        margin: 0 0 8px;
+        font-size: 1rem;
+      }
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.65;
+      }
 
       .workflow {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 16px;
+        gap: 14px;
       }
       .step {
-        position: relative;
-        padding: 22px;
-        border-radius: var(--radius);
-        background: #101010;
-        border: 1px solid rgba(255,255,255,0.09);
+        padding: 20px;
       }
-      .step .num {
-        width: 36px; height: 36px;
+      .num {
+        width: 38px;
+        height: 38px;
         border-radius: 999px;
-        display: grid; place-items: center;
-        background: linear-gradient(135deg, var(--accent), var(--accent-2));
-        color: #041018;
-        font-weight: 900;
+        display: grid;
+        place-items: center;
         margin-bottom: 12px;
+        background: linear-gradient(135deg, #f5f8ff, #dcebff);
+        color: #050608;
+        font-weight: 900;
       }
       .step h3 { margin: 0 0 8px; }
-      .step p { margin: 0; color: var(--muted); line-height: 1.65; }
+      .step p { margin: 0; color: var(--muted); line-height: 1.68; }
 
       .split {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
-        align-items: stretch;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 14px;
       }
-      .quote, .contact {
-        border-radius: 18px;
-        border: 1px solid rgba(255,255,255,0.09);
-        background: #101010;
-        padding: 24px;
+      .quote {
+        padding: 22px;
       }
-      .quote h3, .contact h3 { margin: 0 0 12px; }
-      .quote p, .contact p { margin: 0; color: var(--muted); line-height: 1.7; }
-      .contact form {
-        display: grid;
-        gap: 12px;
-        margin-top: 18px;
+      .quote h3 {
+        margin: 0 0 12px;
+        font-size: 1.15rem;
+      }
+      .quote p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.72;
+      }
+      .quote .checklist {
+        margin-top: 16px;
+      }
+
+      .contact {
+        padding: 22px;
       }
       .contact-top {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         gap: 18px;
-        margin-top: 18px;
-        padding-top: 18px;
-        border-top: 1px solid rgba(255,255,255,0.08);
+        flex-wrap: wrap;
+        padding-bottom: 18px;
+        margin-bottom: 18px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       }
       .contact-brand {
         display: grid;
-        gap: 10px;
+        gap: 8px;
       }
-      .contact-brand .brand-lockup {
-        text-decoration: none;
+      .contact-brand .brand-logo {
+        width: 210px;
+        max-width: 62vw;
       }
-      .contact-email-links {
+      .contact-meta {
         display: grid;
         gap: 8px;
-        justify-items: end;
         text-align: right;
+        color: var(--muted);
       }
-      .contact-email-links a {
+      .contact-meta a {
         color: var(--text);
       }
-      .contact-email-links small {
-        color: var(--muted);
+      .contact-meta small {
+        color: var(--soft);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-size: 0.78rem;
+      }
+      form {
+        display: grid;
+        gap: 12px;
       }
       .row {
         display: grid;
@@ -517,49 +471,49 @@
       label {
         display: grid;
         gap: 8px;
-        color: rgba(244, 244, 244, 0.82);
+        color: rgba(244, 247, 251, 0.86);
         font-size: 0.88rem;
       }
-      label span {
-        font-weight: 600;
-      }
-      input, textarea {
+      label span { font-weight: 600; }
+      input,
+      textarea {
         width: 100%;
         padding: 14px 16px;
-        border-radius: 12px;
-        border: 1px solid rgba(255,255,255,0.12);
-        background: #0b0b0b;
+        border-radius: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(4, 5, 8, 0.75);
         color: var(--text);
         outline: none;
-        font: inherit;
       }
-      textarea { min-height: 120px; resize: vertical; }
-      input::placeholder, textarea::placeholder { color: rgba(244,244,244,0.38); }
-      input:focus, textarea:focus { border-color: rgba(255,255,255,0.3); box-shadow: 0 0 0 4px rgba(255,255,255,0.08); }
+      textarea { min-height: 128px; resize: vertical; }
+      input::placeholder,
+      textarea::placeholder { color: rgba(244, 247, 251, 0.38); }
+      input:focus,
+      textarea:focus {
+        border-color: rgba(255, 255, 255, 0.26);
+        box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.07);
+      }
+
+      footer {
+        padding: 30px 0 40px;
+        color: var(--soft);
+      }
       .footer {
-        padding: 28px 0 42px;
-        color: rgba(245,247,251,0.5);
-        font-size: 0.92rem;
-        background: linear-gradient(180deg, rgba(2,4,7,0), rgba(2,4,7,0.7) 18%, #020407 100%);
-      }
-      .footer .wrap {
         display: flex;
         justify-content: space-between;
+        align-items: flex-start;
         gap: 16px;
         flex-wrap: wrap;
-        border-top: 1px solid rgba(255,255,255,0.08);
         padding-top: 18px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
       }
       .footer-brand {
-        display: flex;
-        flex-direction: column;
+        display: grid;
         gap: 10px;
       }
-      .footer-logo {
-        width: 170px;
-        height: auto;
-        display: block;
-        filter: drop-shadow(0 8px 22px rgba(0, 0, 0, 0.25));
+      .footer-brand .brand-logo {
+        width: 180px;
+        max-width: 60vw;
       }
       .footer-links {
         display: flex;
@@ -567,113 +521,138 @@
         gap: 12px;
         align-items: center;
       }
-      .footer-links a {
-        color: var(--muted);
-      }
+      .footer-links a { color: var(--soft); }
       .footer-links a:hover { color: var(--text); }
 
-      @media (max-width: 980px) {
-        .hero-grid, .cards, .workflow, .split { grid-template-columns: 1fr; }
-        .nav-links { display: none; }
+      @media (max-width: 1020px) {
+        .hero-grid,
+        .cards,
+        .workflow,
+        .split {
+          grid-template-columns: 1fr;
+        }
       }
-      @media (max-width: 640px) {
-        .hero { padding-top: 52px; }
+      @media (max-width: 760px) {
+        .nav {
+          flex-wrap: wrap;
+        }
+        .nav-links {
+          width: 100%;
+          justify-content: space-between;
+          gap: 12px;
+          order: 3;
+        }
+        .brand-tag { display: block; }
+        .row { grid-template-columns: 1fr; }
+        .stats { grid-template-columns: 1fr; }
+      }
+      @media (max-width: 600px) {
+        .nav-links {
+          display: none;
+        }
+        .brand-logo,
+        .contact-brand .brand-logo,
+        .footer-brand .brand-logo {
+          width: min(100%, 320px);
+        }
+        .hero {
+          padding-top: 28px;
+        }
         .hero-actions .cta,
-        .hero-links .link-pill,
-        .footer-links a,
-        .contact .cta {
+        .footer-links a {
           width: 100%;
           justify-content: center;
         }
-        .contact-top {
-          grid-template-columns: 1fr;
-          flex-direction: column;
-          align-items: flex-start;
-        }
-        .contact-email-links {
-          justify-items: start;
+        .contact-meta {
           text-align: left;
         }
-        .row { grid-template-columns: 1fr; }
-        .metric b { font-size: 1.2rem; }
-        .nav .cta { display: none; }
       }
     </style>
   </head>
   <body>
+    <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
     <header>
       <div class="wrap nav">
-        <a class="brand brand-lockup" href="#top" aria-label="Amua TI — voltar ao topo">
-          <img class="brand-icon" src="assets/img/amua_ti_logo_circle.jpg" alt="Ícone da Amua TI" />
-          <img class="brand-logo" src="assets/img/amua_ti_logo_header.jpg" alt="Amua TI" />
+        <a class="brand" href="#top" aria-label="Amua TI — voltar ao topo">
+          <img class="brand-logo" src="assets/img/amua_ti_logo_brand_crop.jpg" alt="Amua TI" />
+          <span class="brand-tag">Tecnologia que sustenta o seu dia</span>
         </a>
+
         <nav class="nav-links" aria-label="Navegação">
           <a href="#servicos">Serviços</a>
-          <a href="#processo">Como funciona</a>
+          <a href="#processo">Processo</a>
           <a href="#diferenciais">Diferenciais</a>
           <a href="#contato">Contato</a>
         </nav>
+
         <a class="cta primary" href="#contato">Solicitar diagnóstico</a>
       </div>
     </header>
 
-    <main id="top">
-      <section class="hero">
+    <main id="top" aria-label="Conteúdo principal">
+      <section class="hero" id="conteudo">
         <div class="wrap hero-grid">
           <div>
             <div class="eyebrow">Tecnologia que sustenta seu dia</div>
-            <h1>Tecnologia que <em>resolve</em> sua operação.</h1>
+            <h1>Tecnologia que <em>resolve</em> a operação.</h1>
             <p class="lead">
-              Suporte próximo, implantação organizada e infraestrutura pensada para deixar sua empresa mais estável,
-              mais segura e pronta para crescer com previsibilidade.
+              A Amua TI atua com suporte próximo, implantação organizada e uma base técnica pensada para
+              deixar sua empresa mais estável, mais segura e pronta para crescer com previsibilidade.
             </p>
+
             <div class="hero-actions">
               <a class="cta primary" href="#contato">Quero um diagnóstico</a>
               <a class="cta" href="https://wa.me/5511999999999" target="_blank" rel="noreferrer">Falar no WhatsApp</a>
             </div>
-            <div class="hero-links" aria-label="Links rápidos">
-              <a class="link-pill" href="#servicos">Serviços</a>
-              <a class="link-pill" href="#processo">Como funciona</a>
-              <a class="link-pill" href="#contato">Contato</a>
+
+            <div class="hero-points" aria-label="Destaques rápidos">
+              <span class="point">Atendimento próximo</span>
+              <span class="point">Escopo claro</span>
+              <span class="point">Execução organizada</span>
             </div>
-            <div class="hero-trust" aria-label="Destaques da proposta">
-              <span>Atendimento próximo</span>
-              <span>Escopo claro</span>
-              <span>Operação estável</span>
-            </div>
-            <div class="micro">Clareza técnica, atendimento próximo e execução sem ruído.</div>
+
+            <div class="micro">Clareza técnica, confiança comercial e uma comunicação sem ruído.</div>
           </div>
 
-          <aside class="panel" aria-label="Resumo da proposta Amua TI">
+          <aside class="panel" aria-label="Resumo da proposta da Amua TI">
             <div class="panel-top">
-              <p class="panel-kicker">Tecnologia que sustenta seu dia.</p>
-              <a href="#top" aria-label="Amua TI — voltar ao topo">
-                <img class="panel-logo" src="assets/img/amua_ti_logo_circle.jpg" alt="Logo oficial da Amua TI" />
-              </a>
-              <div class="hero-visual" aria-hidden="true">
-                <span class="halo"></span>
-                <span class="device d1"></span>
-                <span class="device d2"></span>
-                <span class="device d3"></span>
-                <span class="device d4"></span>
-                <span class="device d5"></span>
+              <div class="panel-kicker">Marca oficial</div>
+              <img class="panel-logo" src="assets/img/amua_ti_logo_header.jpg" alt="Logo oficial da Amua TI" />
+              <div class="panel-caption">
+                <strong>Tecnologia que sustenta seu dia.</strong>
+                <span>Uma presença visual mais firme, limpa e confiável — com a assinatura correta da marca.</span>
               </div>
-              <div class="panel-title">
-                <span>Amua TI • proposta de valor</span>
-                <span class="badge">premium</span>
+              <div class="panel-badges" aria-label="Assinaturas da proposta">
+                <span class="badge">Suporte</span>
+                <span class="badge">Infraestrutura</span>
+                <span class="badge">Segurança digital</span>
+                <span class="badge">Automação</span>
               </div>
             </div>
             <div class="panel-body">
-              <div class="metrics">
-                <div class="metric"><b>Diagnóstico</b><span>entendimento claro do cenário e das prioridades</span></div>
-                <div class="metric"><b>Resposta ágil</b><span>comunicação objetiva para não travar a operação</span></div>
-                <div class="metric"><b>Implantação</b><span>execução organizada, com escopo e acompanhamento</span></div>
-                <div class="metric"><b>Suporte</b><span>continuidade para manter a TI saudável no dia a dia</span></div>
+              <div class="stats">
+                <div class="stat">
+                  <b>Diagnóstico</b>
+                  <span>Entendimento claro do cenário e das prioridades.</span>
+                </div>
+                <div class="stat">
+                  <b>Resposta ágil</b>
+                  <span>Comunicação objetiva para não travar a operação.</span>
+                </div>
+                <div class="stat">
+                  <b>Implantação</b>
+                  <span>Execução organizada, com escopo e acompanhamento.</span>
+                </div>
+                <div class="stat">
+                  <b>Suporte contínuo</b>
+                  <span>Continuidade para manter a TI saudável no dia a dia.</span>
+                </div>
               </div>
               <ul class="checklist">
                 <li>Atendimento para pequenas e médias empresas</li>
                 <li>Infraestrutura, redes, segurança e suporte</li>
-                <li>Comunicação clara e solução sem enrolação</li>
+                <li>Operação com mais clareza e menos improviso</li>
               </ul>
             </div>
           </aside>
@@ -683,11 +662,12 @@
       <section id="servicos">
         <div class="wrap">
           <div class="section-head">
-            <h2>O que a Amua TI pode entregar</h2>
+            <h2>O núcleo da oferta</h2>
             <p>
-              Serviços pensados para empresas que precisam de confiança técnica, comunicação clara e uma TI que não atrapalha o negócio.
+              Uma estrutura de serviços objetiva, profissional e fácil de entender — sem exageros, sem ruído e sem visual genérico.
             </p>
           </div>
+
           <div class="cards">
             <article class="card">
               <div class="icon">⚙️</div>
@@ -697,7 +677,7 @@
             <article class="card">
               <div class="icon">🛡️</div>
               <h3>Segurança digital</h3>
-              <p>Boas práticas, proteção de acessos e orientação para reduzir riscos no ambiente digital.</p>
+              <p>Proteção de acessos, boas práticas e orientação para reduzir riscos no ambiente digital.</p>
             </article>
             <article class="card">
               <div class="icon">🌐</div>
@@ -707,7 +687,7 @@
             <article class="card">
               <div class="icon">☁️</div>
               <h3>Nuvem e automação</h3>
-              <p>Processos mais simples, integrações e automações para ganhar eficiência sem complicar o dia a dia.</p>
+              <p>Integrações e automações para ganhar eficiência sem complicar a operação.</p>
             </article>
           </div>
         </div>
@@ -717,29 +697,30 @@
         <div class="wrap">
           <div class="section-head">
             <h2>Como funciona</h2>
-            <p>Fluxo claro, sem complexidade desnecessária e com cada etapa pensada para dar previsibilidade.</p>
+            <p>Fluxo enxuto, previsível e pensado para transmitir controle em cada etapa.</p>
           </div>
+
           <div class="workflow">
-            <div class="step">
+            <article class="step">
               <div class="num">1</div>
               <h3>Diagnóstico</h3>
-              <p>Entendemos o cenário, as dores e as prioridades para definir o que realmente importa primeiro.</p>
-            </div>
-            <div class="step">
+              <p>Entendemos o contexto, as dores e as prioridades para focar no que realmente importa primeiro.</p>
+            </article>
+            <article class="step">
               <div class="num">2</div>
               <h3>Plano</h3>
-              <p>Montamos uma proposta objetiva, com escopo enxuto, prioridades e próximos passos claros.</p>
-            </div>
-            <div class="step">
+              <p>Definimos escopo, prioridades e próximos passos de forma objetiva e transparente.</p>
+            </article>
+            <article class="step">
               <div class="num">3</div>
               <h3>Implantação</h3>
-              <p>Executamos as melhorias com organização, acompanhamento e comunicação simples durante todo o processo.</p>
-            </div>
-            <div class="step">
+              <p>Executamos as melhorias com organização, acompanhamento e comunicação clara.</p>
+            </article>
+            <article class="step">
               <div class="num">4</div>
               <h3>Suporte contínuo</h3>
               <p>Seguimos perto para manter a operação estável, saudável e evoluindo com segurança.</p>
-            </div>
+            </article>
           </div>
         </div>
       </section>
@@ -747,21 +728,21 @@
       <section id="diferenciais">
         <div class="wrap split">
           <article class="quote">
-            <h3>Por que a Amua TI passa confiança</h3>
+            <h3>Por que a marca passa mais confiança</h3>
             <p>
-              A proposta comunica seriedade, proximidade e domínio técnico sem exagero.
+              A página foi redesenhada para ficar mais personalizada, mais séria e menos com cara de template.
             </p>
-            <ul class="checklist" style="margin-top:16px">
-              <li>Layout escuro com alto contraste e leitura rápida</li>
-              <li>Logo oficial em destaque no topo, no painel e no rodapé</li>
-              <li>Chamadas objetivas e foco em conversão real</li>
-              <li>Seções curtas para comunicar valor sem poluir a tela</li>
+            <ul class="checklist">
+              <li>Logo oficial usado nas posições certas</li>
+              <li>Hierarquia visual limpa e forte</li>
+              <li>Fundo escuro com presença premium</li>
+              <li>Textos curtos e diretos, sem excesso</li>
             </ul>
           </article>
           <article class="quote">
-            <h3>O que isso significa para sua empresa</h3>
+            <h3>O que isso comunica</h3>
             <p>
-              Menos ruído, mais previsibilidade e uma presença institucional que reforça confiança antes mesmo do primeiro contato.
+              Uma operação organizada, postura profissional e uma marca que transmite segurança antes mesmo da primeira conversa.
             </p>
           </article>
         </div>
@@ -769,23 +750,23 @@
 
       <section id="contato">
         <div class="wrap contact">
-          <h3>Vamos deixar sua TI mais previsível</h3>
-          <p>
-            Conte o cenário da sua empresa e a Amua TI responde com um direcionamento claro para diagnóstico, suporte ou melhoria da infraestrutura.
-          </p>
           <div class="contact-top">
             <div class="contact-brand">
-              <a class="brand brand-lockup" href="#top" aria-label="Amua TI — voltar ao topo">
-                <img class="brand-icon" src="assets/img/amua_ti_logo_circle.jpg" alt="Ícone da Amua TI" />
-                <img class="brand-logo" src="assets/img/amua_ti_logo_header.jpg" alt="Amua TI" />
-              </a>
+              <div class="section-head" style="margin:0; gap:6px;">
+                <h3>Vamos deixar sua TI mais previsível</h3>
+                <p>
+                  Conte o cenário da sua empresa e receba um direcionamento claro para diagnóstico, suporte ou melhoria da infraestrutura.
+                </p>
+              </div>
+              <img class="brand-logo" src="assets/img/amua_ti_logo_brand_crop.jpg" alt="Amua TI" />
             </div>
-            <div class="contact-email-links" aria-label="E-mail e contato rápido">
+            <div class="contact-meta" aria-label="E-mail e contato rápido">
               <small>E-mail oficial</small>
               <a href="mailto:contato@amuati.com.br?subject=Quero%20um%20diagn%C3%B3stico%20da%20Amua%20TI">contato@amuati.com.br</a>
               <a href="https://wa.me/5511999999999" target="_blank" rel="noreferrer">WhatsApp direto</a>
             </div>
           </div>
+
           <form>
             <div class="row">
               <label>
@@ -817,12 +798,10 @@
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="wrap">
+    <footer>
+      <div class="wrap footer">
         <div class="footer-brand">
-          <a href="#top" aria-label="Amua TI — voltar ao topo">
-            <img class="footer-logo" src="assets/img/amua_ti_logo_header.jpg" alt="Amua TI" />
-          </a>
+          <img class="brand-logo" src="assets/img/amua_ti_logo_brand_crop.jpg" alt="Amua TI" />
           <span>Amua TI — tecnologia que sustenta sua operação com clareza e consistência.</span>
         </div>
         <div class="footer-links" aria-label="Links de contato">
