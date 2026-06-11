@@ -79,9 +79,9 @@
       }
       .brand-logo {
         display: block;
-        width: 148px;
+        width: 176px;
         height: auto;
-        max-width: min(36vw, 148px);
+        max-width: min(40vw, 176px);
         filter: drop-shadow(0 8px 22px rgba(0, 0, 0, 0.25));
       }
       .brand-text {
@@ -106,9 +106,11 @@
       }
       .nav-links {
         display: flex;
-        gap: 22px;
+        gap: 18px;
         color: var(--muted);
-        font-size: 0.92rem;
+        font-size: 0.84rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
       }
       .nav-links a:hover { color: var(--text); }
       .cta {
@@ -133,12 +135,12 @@
       }
 
       .hero {
-        padding: 72px 0 32px;
+        padding: 84px 0 40px;
       }
       .hero-grid {
         display: grid;
-        grid-template-columns: 1fr 0.95fr;
-        gap: 36px;
+        grid-template-columns: 1.02fr 0.98fr;
+        gap: 40px;
         align-items: center;
       }
       .eyebrow {
@@ -162,10 +164,10 @@
       }
       h1 {
         margin: 0;
-        font-size: clamp(2.9rem, 6.4vw, 5.8rem);
-        line-height: 0.92;
-        letter-spacing: -0.08em;
-        max-width: 10ch;
+        font-size: clamp(2.7rem, 6vw, 5.5rem);
+        line-height: 0.9;
+        letter-spacing: -0.09em;
+        max-width: 9ch;
       }
       h1 em {
         font-style: normal;
@@ -175,45 +177,62 @@
         color: transparent;
       }
       .lead {
-        margin: 20px 0 0;
-        max-width: 34ch;
-        font-size: 1.08rem;
-        line-height: 1.7;
+        margin: 18px 0 0;
+        max-width: 40ch;
+        font-size: 1.06rem;
+        line-height: 1.75;
         color: var(--muted);
       }
       .hero-actions {
         display: flex;
-        gap: 14px;
+        gap: 12px;
         flex-wrap: wrap;
-        margin-top: 28px;
+        margin-top: 24px;
       }
       .hero-links {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
-        margin-top: 16px;
+        margin-top: 14px;
       }
       .link-pill {
         display: inline-flex;
         align-items: center;
         gap: 8px;
         padding: 10px 14px;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(195, 225, 255, 0.12);
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
         color: var(--muted);
-        font-size: 0.92rem;
+        font-size: 0.88rem;
         transition: transform .18s ease, border-color .18s ease, color .18s ease, background .18s ease;
       }
       .link-pill:hover {
         transform: translateY(-1px);
-        border-color: rgba(19, 166, 241, 0.35);
+        border-color: rgba(255, 255, 255, 0.24);
         color: var(--text);
-        background: rgba(19, 166, 241, 0.08);
+        background: rgba(255, 255, 255, 0.07);
+      }
+      .hero-trust {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 16px;
+      }
+      .hero-trust span {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 9px 12px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: rgba(244, 244, 244, 0.78);
+        font-size: 0.86rem;
       }
       .micro {
         margin-top: 14px;
-        color: rgba(245,247,251,0.56);
+        color: rgba(244,244,244,0.58);
         font-size: 0.95rem;
       }
 
@@ -227,12 +246,19 @@
         overflow: hidden;
       }
       .panel-top {
-        padding: 18px 18px 14px;
+        padding: 20px 20px 14px;
         border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+      .panel-logo {
+        display: block;
+        width: min(100%, 230px);
+        height: auto;
+        margin: 2px 0 14px;
+        filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.35));
       }
       .hero-visual {
         position: relative;
-        height: 230px;
+        height: 210px;
         margin-bottom: 14px;
         border: 1px solid rgba(255,255,255,0.08);
         border-radius: 14px;
@@ -301,6 +327,7 @@
         align-items: center;
         gap: 12px;
         font-weight: 700;
+        font-size: 0.92rem;
       }
       .badge {
         font-size: 0.82rem;
@@ -311,7 +338,7 @@
         font-weight: 800;
       }
       .panel-body {
-        padding: 22px;
+        padding: 20px;
       }
       .metrics {
         display: grid;
@@ -319,7 +346,7 @@
         gap: 14px;
       }
       .metric {
-        background: #121212;
+        background: #101010;
         border: 1px solid rgba(255,255,255,0.09);
         border-radius: 12px;
         padding: 16px;
@@ -392,7 +419,7 @@
         background: linear-gradient(135deg, rgba(64,211,255,0.18), rgba(124,92,255,0.22));
         font-size: 1.2rem;
       }
-      .card h3 { margin: 0 0 8px; font-size: 1.05rem; }
+      .card h3 { margin: 0 0 8px; font-size: 1rem; }
       .card p { margin: 0; color: var(--muted); line-height: 1.65; }
 
       .workflow {
@@ -442,6 +469,15 @@
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
+      }
+      label {
+        display: grid;
+        gap: 8px;
+        color: rgba(244, 244, 244, 0.82);
+        font-size: 0.88rem;
+      }
+      label span {
+        font-weight: 600;
       }
       input, textarea {
         width: 100%;
@@ -498,8 +534,16 @@
       }
       @media (max-width: 640px) {
         .hero { padding-top: 52px; }
+        .hero-actions .cta,
+        .hero-links .link-pill,
+        .footer-links a,
+        .contact .cta {
+          width: 100%;
+          justify-content: center;
+        }
         .row { grid-template-columns: 1fr; }
-        .metric b { font-size: 1.35rem; }
+        .metric b { font-size: 1.2rem; }
+        .nav .cta { display: none; }
       }
     </style>
   </head>
@@ -524,10 +568,10 @@
         <div class="wrap hero-grid">
           <div>
             <div class="eyebrow">Tecnologia que sustenta seu dia</div>
-            <h1>Tecnologia que <em>resolve</em>, sustenta e acelera seu negócio.</h1>
+            <h1>Tecnologia que <em>resolve</em> sua operação.</h1>
             <p class="lead">
-              A Amua TI entrega suporte próximo, implantação organizada e soluções pensadas para deixar sua operação
-              mais estável, mais segura e mais pronta para crescer.
+              Suporte próximo, implantação organizada e infraestrutura pensada para deixar sua empresa mais estável,
+              mais segura e pronta para crescer com previsibilidade.
             </p>
             <div class="hero-actions">
               <a class="cta primary" href="#contato">Quero um diagnóstico</a>
@@ -536,15 +580,20 @@
             <div class="hero-links" aria-label="Links rápidos">
               <a class="link-pill" href="#servicos">Serviços</a>
               <a class="link-pill" href="#processo">Como funciona</a>
-              <a class="link-pill" href="mailto:contato@amuati.com.br">E-mail</a>
-              <a class="link-pill" href="https://wa.me/5511999999999" target="_blank" rel="noreferrer">WhatsApp</a>
+              <a class="link-pill" href="#contato">Contato</a>
             </div>
-            <div class="micro">Versão de teste da landing, já com a identidade visual oficial da Amua TI.</div>
+            <div class="hero-trust" aria-label="Destaques da proposta">
+              <span>Atendimento próximo</span>
+              <span>Escopo claro</span>
+              <span>Operação estável</span>
+            </div>
+            <div class="micro">Clareza técnica, atendimento próximo e execução sem ruído.</div>
           </div>
 
           <aside class="panel" aria-label="Resumo da proposta Amua TI">
             <div class="panel-top">
               <p class="panel-kicker">Tecnologia que sustenta seu dia.</p>
+              <img class="panel-logo" src="assets/img/amua_ti_logo_brand_crop.jpg" alt="Amua TI" />
               <div class="hero-visual" aria-hidden="true">
                 <span class="halo"></span>
                 <span class="device d1"></span>
@@ -580,29 +629,29 @@
           <div class="section-head">
             <h2>O que a Amua TI pode entregar</h2>
             <p>
-              Um pacote de serviços desenhado para ajudar empresas que precisam de confiança técnica, agilidade e uma operação mais previsível.
+              Serviços pensados para empresas que precisam de confiança técnica, comunicação clara e uma TI que não atrapalha o negócio.
             </p>
           </div>
           <div class="cards">
             <article class="card">
               <div class="icon">⚙️</div>
               <h3>Suporte técnico</h3>
-              <p>Atendimento remoto e presencial para resolver incidentes, dúvidas e tarefas do dia a dia.</p>
+              <p>Atendimento remoto e presencial para resolver incidentes, dúvidas e rotinas operacionais com agilidade.</p>
             </article>
             <article class="card">
               <div class="icon">🛡️</div>
               <h3>Segurança digital</h3>
-              <p>Boas práticas, proteção de acessos e orientação para deixar o ambiente mais seguro.</p>
+              <p>Boas práticas, proteção de acessos e orientação para reduzir riscos no ambiente digital.</p>
             </article>
             <article class="card">
               <div class="icon">🌐</div>
               <h3>Redes e infraestrutura</h3>
-              <p>Organização, estabilidade e ajustes para a base tecnológica funcionar melhor.</p>
+              <p>Organização, estabilidade e ajustes para a base tecnológica trabalhar com menos ruído.</p>
             </article>
             <article class="card">
               <div class="icon">☁️</div>
               <h3>Nuvem e automação</h3>
-              <p>Processos mais simples, integrações e uso inteligente da tecnologia para ganhar eficiência.</p>
+              <p>Processos mais simples, integrações e automações para ganhar eficiência sem complicar o dia a dia.</p>
             </article>
           </div>
         </div>
@@ -612,28 +661,28 @@
         <div class="wrap">
           <div class="section-head">
             <h2>Como funciona</h2>
-            <p>Fluxo simples, sem complexidade desnecessária.</p>
+            <p>Fluxo claro, sem complexidade desnecessária e com cada etapa pensada para dar previsibilidade.</p>
           </div>
           <div class="workflow">
             <div class="step">
               <div class="num">1</div>
               <h3>Diagnóstico</h3>
-              <p>Entendemos o cenário, as dores e as prioridades do negócio.</p>
+              <p>Entendemos o cenário, as dores e as prioridades para definir o que realmente importa primeiro.</p>
             </div>
             <div class="step">
               <div class="num">2</div>
               <h3>Plano</h3>
-              <p>Montamos uma proposta objetiva, com escopo e próximos passos claros.</p>
+              <p>Montamos uma proposta objetiva, com escopo enxuto, prioridades e próximos passos claros.</p>
             </div>
             <div class="step">
               <div class="num">3</div>
               <h3>Implantação</h3>
-              <p>Executamos as melhorias com organização, acompanhamento e comunicação simples.</p>
+              <p>Executamos as melhorias com organização, acompanhamento e comunicação simples durante todo o processo.</p>
             </div>
             <div class="step">
               <div class="num">4</div>
               <h3>Suporte contínuo</h3>
-              <p>Seguimos perto para manter a operação estável e evoluindo.</p>
+              <p>Seguimos perto para manter a operação estável, saudável e evoluindo com segurança.</p>
             </div>
           </div>
         </div>
@@ -642,16 +691,21 @@
       <section id="diferenciais">
         <div class="wrap split">
           <article class="quote">
-            <h3>Por que esse estilo funciona</h3>
+            <h3>Por que a Amua TI passa confiança</h3>
             <p>
-              A página usa uma estrutura parecida com a landing de campanha que você mostrou: headline forte, blocos curtos,
-              CTA evidente e uma narrativa direta. Para a Amua TI, a diferença é o tom: mais corporativo, mais confiável e mais comercial.
+              A proposta comunica seriedade, proximidade e domínio técnico sem exagero.
             </p>
+            <ul class="checklist" style="margin-top:16px">
+              <li>Layout escuro com alto contraste e leitura rápida</li>
+              <li>Logo oficial em destaque no topo, no painel e no rodapé</li>
+              <li>Chamadas objetivas e foco em conversão real</li>
+              <li>Seções curtas para comunicar valor sem poluir a tela</li>
+            </ul>
           </article>
           <article class="quote">
-            <h3>Diferenciais sugeridos</h3>
+            <h3>O que isso significa para sua empresa</h3>
             <p>
-              Visual premium escuro, chamadas objetivas, prova de processo, foco em conversão e formulário simples para captar leads.
+              Menos ruído, mais previsibilidade e uma presença institucional que reforça confiança antes mesmo do primeiro contato.
             </p>
           </article>
         </div>
@@ -659,22 +713,36 @@
 
       <section id="contato">
         <div class="wrap contact">
-          <h3>Receba uma versão final da Amua TI</h3>
+          <h3>Vamos deixar sua TI mais previsível</h3>
           <p>
-            Se você quiser, eu também posso adaptar esse teste para a identidade visual definitiva da Amua TI,
-            com texto comercial real e link de WhatsApp/e-mail configurado.
+            Conte o cenário da sua empresa e a Amua TI responde com um direcionamento claro para diagnóstico, suporte ou melhoria da infraestrutura.
           </p>
           <form>
             <div class="row">
-              <input type="text" placeholder="Seu nome" />
-              <input type="text" placeholder="Empresa" />
+              <label>
+                <span>Seu nome</span>
+                <input type="text" placeholder="Seu nome" />
+              </label>
+              <label>
+                <span>Empresa</span>
+                <input type="text" placeholder="Nome da empresa" />
+              </label>
             </div>
             <div class="row">
-              <input type="email" placeholder="Seu e-mail" />
-              <input type="tel" placeholder="Seu WhatsApp" />
+              <label>
+                <span>Seu e-mail</span>
+                <input type="email" placeholder="seuemail@empresa.com" />
+              </label>
+              <label>
+                <span>Seu WhatsApp</span>
+                <input type="tel" placeholder="(11) 99999-9999" />
+              </label>
             </div>
-            <textarea placeholder="Descreva o que sua empresa precisa"></textarea>
-            <a class="cta primary" href="mailto:contato@amuati.com.br?subject=Quero%20um%20diagn%C3%B3stico%20da%20Amua%20TI">Enviar pedido de contato</a>
+            <label>
+              <span>Como podemos ajudar?</span>
+              <textarea placeholder="Descreva o que sua empresa precisa"></textarea>
+            </label>
+            <a class="cta primary" href="mailto:contato@amuati.com.br?subject=Quero%20um%20diagn%C3%B3stico%20da%20Amua%20TI">Solicitar diagnóstico</a>
           </form>
         </div>
       </section>
@@ -684,7 +752,7 @@
       <div class="wrap">
         <div class="footer-brand">
           <img class="footer-logo" src="assets/img/amua_ti_logo_header.jpg" alt="Amua TI" />
-          <span>Amua TI — tecnologia que sustenta sua operação.</span>
+          <span>Amua TI — tecnologia que sustenta sua operação com clareza e consistência.</span>
         </div>
         <div class="footer-links" aria-label="Links de contato">
           <a href="#top">Topo</a>
