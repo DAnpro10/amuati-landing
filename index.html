@@ -77,6 +77,21 @@
         gap: 12px;
         min-width: 0;
       }
+      .brand-lockup {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .brand-icon {
+        display: block;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 1px solid rgba(255,255,255,0.12);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+        flex: none;
+      }
       .brand-logo {
         display: block;
         width: 176px;
@@ -92,10 +107,11 @@
       }
       .panel-logo {
         display: block;
-        width: min(100%, 316px);
+        width: min(100%, 240px);
         height: auto;
-        margin-bottom: 14px;
-        filter: drop-shadow(0 14px 30px rgba(0, 0, 0, 0.25));
+        margin: 2px 0 14px;
+        border-radius: 20px;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
       }
       .panel-kicker {
         margin: 0 0 10px;
@@ -465,6 +481,34 @@
         gap: 12px;
         margin-top: 18px;
       }
+      .contact-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 18px;
+        margin-top: 18px;
+        padding-top: 18px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+      }
+      .contact-brand {
+        display: grid;
+        gap: 10px;
+      }
+      .contact-brand .brand-lockup {
+        text-decoration: none;
+      }
+      .contact-email-links {
+        display: grid;
+        gap: 8px;
+        justify-items: end;
+        text-align: right;
+      }
+      .contact-email-links a {
+        color: var(--text);
+      }
+      .contact-email-links small {
+        color: var(--muted);
+      }
       .row {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -541,6 +585,15 @@
           width: 100%;
           justify-content: center;
         }
+        .contact-top {
+          grid-template-columns: 1fr;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .contact-email-links {
+          justify-items: start;
+          text-align: left;
+        }
         .row { grid-template-columns: 1fr; }
         .metric b { font-size: 1.2rem; }
         .nav .cta { display: none; }
@@ -550,7 +603,8 @@
   <body>
     <header>
       <div class="wrap nav">
-        <a class="brand" href="#top" aria-label="Amua TI">
+        <a class="brand brand-lockup" href="#top" aria-label="Amua TI — voltar ao topo">
+          <img class="brand-icon" src="assets/img/amua_ti_logo_circle.jpg" alt="Ícone da Amua TI" />
           <img class="brand-logo" src="assets/img/amua_ti_logo_header.jpg" alt="Amua TI" />
         </a>
         <nav class="nav-links" aria-label="Navegação">
@@ -593,7 +647,9 @@
           <aside class="panel" aria-label="Resumo da proposta Amua TI">
             <div class="panel-top">
               <p class="panel-kicker">Tecnologia que sustenta seu dia.</p>
-              <img class="panel-logo" src="assets/img/amua_ti_logo_brand_crop.jpg" alt="Amua TI" />
+              <a href="#top" aria-label="Amua TI — voltar ao topo">
+                <img class="panel-logo" src="assets/img/amua_ti_logo_circle.jpg" alt="Logo oficial da Amua TI" />
+              </a>
               <div class="hero-visual" aria-hidden="true">
                 <span class="halo"></span>
                 <span class="device d1"></span>
@@ -717,6 +773,19 @@
           <p>
             Conte o cenário da sua empresa e a Amua TI responde com um direcionamento claro para diagnóstico, suporte ou melhoria da infraestrutura.
           </p>
+          <div class="contact-top">
+            <div class="contact-brand">
+              <a class="brand brand-lockup" href="#top" aria-label="Amua TI — voltar ao topo">
+                <img class="brand-icon" src="assets/img/amua_ti_logo_circle.jpg" alt="Ícone da Amua TI" />
+                <img class="brand-logo" src="assets/img/amua_ti_logo_header.jpg" alt="Amua TI" />
+              </a>
+            </div>
+            <div class="contact-email-links" aria-label="E-mail e contato rápido">
+              <small>E-mail oficial</small>
+              <a href="mailto:contato@amuati.com.br?subject=Quero%20um%20diagn%C3%B3stico%20da%20Amua%20TI">contato@amuati.com.br</a>
+              <a href="https://wa.me/5511999999999" target="_blank" rel="noreferrer">WhatsApp direto</a>
+            </div>
+          </div>
           <form>
             <div class="row">
               <label>
@@ -751,7 +820,9 @@
     <footer class="footer">
       <div class="wrap">
         <div class="footer-brand">
-          <img class="footer-logo" src="assets/img/amua_ti_logo_header.jpg" alt="Amua TI" />
+          <a href="#top" aria-label="Amua TI — voltar ao topo">
+            <img class="footer-logo" src="assets/img/amua_ti_logo_header.jpg" alt="Amua TI" />
+          </a>
           <span>Amua TI — tecnologia que sustenta sua operação com clareza e consistência.</span>
         </div>
         <div class="footer-links" aria-label="Links de contato">
