@@ -91,12 +91,13 @@
         gap: 12px;
         min-width: 0;
       }
-      .brand-lockup {
-        width: min(230px, 45vw);
-        height: auto;
-        display: block;
+      .brand-mark {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
         flex: none;
-        filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.3));
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.28);
+        border: 1px solid rgba(255, 255, 255, 0.08);
       }
       .brand-copy {
         display: grid;
@@ -256,16 +257,15 @@
         text-transform: uppercase;
       }
       .panel-brand {
-        display: flex;
-        align-items: center;
+        display: grid;
         gap: 14px;
       }
       .panel-mark {
-        width: 68px;
-        height: 68px;
-        border-radius: 50%;
+        width: 100%;
+        height: auto;
+        border-radius: 18px;
         flex: none;
-        box-shadow: 0 16px 34px rgba(0, 0, 0, 0.35);
+        box-shadow: 0 18px 36px rgba(0, 0, 0, 0.34);
         border: 1px solid rgba(255, 255, 255, 0.08);
       }
       .panel-title {
@@ -273,7 +273,7 @@
         gap: 4px;
       }
       .panel-title strong {
-        font-size: 1.18rem;
+        font-size: 1.08rem;
         letter-spacing: -0.04em;
       }
       .panel-title span {
@@ -619,7 +619,11 @@
     <header>
       <div class="wrap nav">
         <a class="brand" href="#top" aria-label="Amua TI — voltar ao topo">
-          <img class="brand-lockup" src="assets/img/amua_ti_logo_header.jpg" alt="Amua TI" />
+          <img class="brand-mark" src="assets/img/amua_ti_favicon.png" alt="" aria-hidden="true" />
+          <span class="brand-copy">
+            <strong>Amua TI</strong>
+            <span>Tecnologia que sustenta o seu dia</span>
+          </span>
         </a>
 
         <nav class="nav-links" aria-label="Navegação">
@@ -850,7 +854,11 @@
       <div class="wrap footer">
         <div class="footer-brand">
           <a class="brand" href="#top" aria-label="Amua TI — voltar ao topo">
-            <img class="brand-lockup" src="assets/img/amua_ti_logo_header.jpg" alt="Amua TI" />
+            <img class="brand-mark" src="assets/img/amua_ti_favicon.png" alt="" aria-hidden="true" />
+            <span class="brand-copy">
+              <strong>Amua TI</strong>
+              <span>Tecnologia que sustenta sua operação com clareza e consistência.</span>
+            </span>
           </a>
           <span>Amua TI — tecnologia que sustenta sua operação com clareza e consistência.</span>
         </div>
