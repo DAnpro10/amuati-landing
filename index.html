@@ -6,867 +6,397 @@
     <title>Amua TI — Tecnologia que sustenta o seu dia</title>
     <meta
       name="description"
-      content="Landing premium da Amua TI para apresentar suporte, infraestrutura, segurança digital e automação com visual profissional e confiante."
+      content="Site corporativo da Amua TI com suporte de alto impacto, inteligência de dados, segurança digital, conectividade em rede, downloads verificados e dicas de IA para produtividade."
     />
+    <meta name="theme-color" content="#05070b" />
+    <meta property="og:title" content="Amua TI — Tecnologia que sustenta o seu dia" />
+    <meta
+      property="og:description"
+      content="Ecossistema corporativo da Amua TI para suporte, dados, segurança, rede, recursos verificados e produtividade com IA."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/img/amua_ti_logo_header.jpg" />
     <link rel="icon" type="image/png" href="assets/img/amua_ti_favicon.png" />
     <link rel="apple-touch-icon" href="assets/img/amua_ti_favicon.png" />
-    <style>
-      :root {
-        --bg: #050608;
-        --bg-2: #080a0f;
-        --panel: rgba(13, 15, 20, 0.86);
-        --panel-strong: rgba(10, 12, 16, 0.96);
-        --line: rgba(255, 255, 255, 0.09);
-        --line-strong: rgba(255, 255, 255, 0.14);
-        --text: #f4f7fb;
-        --muted: rgba(244, 247, 251, 0.7);
-        --soft: rgba(244, 247, 251, 0.5);
-        --accent: #56b9ff;
-        --accent-2: #2f8cff;
-        --ok: #5cf2a0;
-        --shadow: 0 26px 80px rgba(0, 0, 0, 0.45);
-        --radius: 22px;
-        --radius-sm: 16px;
-        --wrap: min(1160px, calc(100vw - 40px));
-      }
-
-      * { box-sizing: border-box; }
-      html { scroll-behavior: smooth; }
-      body {
-        margin: 0;
-        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background:
-          radial-gradient(circle at 15% 18%, rgba(47, 140, 255, 0.14), transparent 32%),
-          radial-gradient(circle at 82% 12%, rgba(86, 185, 255, 0.1), transparent 28%),
-          radial-gradient(circle at 50% 70%, rgba(92, 242, 160, 0.05), transparent 24%),
-          linear-gradient(180deg, #050608, #080a0f 58%, #020305 100%);
-        color: var(--text);
-        min-height: 100vh;
-        line-height: 1.55;
-        text-rendering: optimizeLegibility;
-        -webkit-font-smoothing: antialiased;
-      }
-      a { color: inherit; text-decoration: none; }
-      img { max-width: 100%; display: block; }
-      button, input, textarea { font: inherit; }
-
-      .wrap {
-        width: var(--wrap);
-        margin: 0 auto;
-      }
-
-      .skip {
-        position: absolute;
-        left: -9999px;
-        top: auto;
-      }
-      .skip:focus {
-        left: 16px;
-        top: 16px;
-        z-index: 1000;
-        background: #fff;
-        color: #000;
-        padding: 10px 14px;
-        border-radius: 12px;
-      }
-
-      header {
-        position: sticky;
-        top: 0;
-        z-index: 20;
-        backdrop-filter: blur(18px);
-        background: linear-gradient(180deg, rgba(5, 6, 8, 0.94), rgba(5, 6, 8, 0.78));
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-      }
-      .nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 18px;
-        padding: 14px 0;
-      }
-      .brand {
-        display: inline-flex;
-        align-items: center;
-        gap: 12px;
-        min-width: 0;
-      }
-      .brand-mark {
-        width: 38px;
-        height: 38px;
-        border-radius: 10px;
-        flex: none;
-        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.28);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-      }
-      .brand-copy {
-        display: grid;
-        gap: 2px;
-        min-width: 0;
-      }
-      .brand-copy strong {
-        font-size: 1rem;
-        line-height: 1;
-        letter-spacing: -0.03em;
-      }
-      .brand-copy span {
-        color: var(--soft);
-        font-size: 0.8rem;
-        line-height: 1.2;
-      }
-      .nav .brand-copy span {
-        display: none;
-      }
-      .nav .brand-copy strong {
-        font-size: 1.12rem;
-      }
-      .nav-links {
-        display: flex;
-        align-items: center;
-        gap: 22px;
-        color: var(--soft);
-        font-size: 0.84rem;
-        letter-spacing: 0.11em;
-        text-transform: uppercase;
-      }
-      .nav-links a:hover { color: var(--text); }
-
-      .cta {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        padding: 12px 18px;
-        border-radius: 12px;
-        border: 1px solid rgba(255, 255, 255, 0.14);
-        background: rgba(255, 255, 255, 0.03);
-        color: var(--text);
-        box-shadow: none;
-        transition: transform .18s ease, background .18s ease, border-color .18s ease;
-        white-space: nowrap;
-      }
-      .cta:hover {
-        transform: translateY(-1px);
-        border-color: rgba(255, 255, 255, 0.24);
-        background: rgba(255, 255, 255, 0.06);
-      }
-      .cta.primary {
-        background: linear-gradient(135deg, #eef5ff, #dbe8ff);
-        color: #050608;
-        border-color: rgba(255, 255, 255, 0.72);
-        font-weight: 800;
-        border-radius: 16px;
-      }
-
-      main { padding-bottom: 28px; }
-      section { padding: 34px 0; }
-
-      .hero {
-        padding-top: 42px;
-      }
-      .hero-grid {
-        display: grid;
-        grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
-        gap: 30px;
-        align-items: center;
-      }
-      .eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 9px 13px;
-        border-radius: 999px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        background: rgba(255, 255, 255, 0.04);
-        color: rgba(244, 247, 251, 0.9);
-        font-size: 0.9rem;
-        letter-spacing: 0.01em;
-      }
-      .eyebrow::before {
-        content: "";
-        width: 9px;
-        height: 9px;
-        border-radius: 50%;
-        background: var(--ok);
-        box-shadow: 0 0 0 6px rgba(92, 242, 160, 0.12);
-      }
-      h1 {
-        margin: 18px 0 0;
-        font-size: clamp(3rem, 6.3vw, 5.8rem);
-        line-height: 0.92;
-        letter-spacing: -0.09em;
-        max-width: 9.2ch;
-      }
-      h1 em {
-        font-style: normal;
-        background: linear-gradient(135deg, var(--accent), var(--accent-2));
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-      }
-      .lead {
-        max-width: 50ch;
-        margin: 18px 0 0;
-        color: rgba(244, 247, 251, 0.8);
-        font-size: 1.06rem;
-        line-height: 1.8;
-      }
-      .hero-actions {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-        margin-top: 24px;
-      }
-      .hero-points {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 16px;
-      }
-      .point {
-        padding: 10px 12px;
-        border-radius: 999px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        background: rgba(255, 255, 255, 0.03);
-        color: rgba(244, 247, 251, 0.8);
-        font-size: 0.87rem;
-      }
-      .micro {
-        margin-top: 16px;
-        color: var(--soft);
-        font-size: 0.96rem;
-      }
-
-      .panel {
-        border-radius: var(--radius);
-        border: 1px solid rgba(255, 255, 255, 0.09);
-        background:
-          radial-gradient(circle at top right, rgba(86, 185, 255, 0.11), transparent 30%),
-          linear-gradient(180deg, rgba(14, 16, 22, 0.96), rgba(10, 12, 16, 0.98));
-        box-shadow: var(--shadow);
-        overflow: hidden;
-      }
-      .panel-top {
-        padding: 22px 22px 18px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      }
-      .panel-kicker {
-        margin: 0 0 12px;
-        color: rgba(244, 247, 251, 0.56);
-        font-size: 0.8rem;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-      }
-      .panel-brand {
-        display: grid;
-        gap: 12px;
-      }
-      .panel-mark {
-        width: 100%;
-        height: auto;
-        border-radius: 20px;
-        flex: none;
-        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
-        border: 1px solid rgba(255, 255, 255, 0.07);
-      }
-      .panel-title {
-        display: grid;
-        gap: 5px;
-      }
-      .panel-title strong {
-        font-size: 1.04rem;
-        letter-spacing: -0.04em;
-      }
-      .panel-title span {
-        color: rgba(244, 247, 251, 0.72);
-        font-size: 0.92rem;
-        line-height: 1.55;
-      }
-      .panel-caption {
-        margin-top: 16px;
-        display: grid;
-        gap: 8px;
-      }
-      .panel-caption strong {
-        font-size: 0.96rem;
-        letter-spacing: 0.01em;
-      }
-      .panel-caption span {
-        color: var(--muted);
-        font-size: 0.95rem;
-      }
-      .panel-badges {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-top: 14px;
-      }
-      .badge {
-        padding: 7px 10px;
-        border-radius: 999px;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        background: rgba(255, 255, 255, 0.025);
-        color: rgba(244, 247, 251, 0.78);
-        font-size: 0.8rem;
-      }
-      .panel-body {
-        padding: 18px 22px 22px;
-      }
-      .stats {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
-      .stat {
-        padding: 14px 16px;
-        border-radius: 14px;
-        background: rgba(255, 255, 255, 0.025);
-        border: 1px solid rgba(255, 255, 255, 0.07);
-      }
-      .stat b {
-        display: block;
-        margin-bottom: 4px;
-        font-size: 0.98rem;
-      }
-      .stat span {
-        color: rgba(244, 247, 251, 0.72);
-        font-size: 0.92rem;
-        line-height: 1.52;
-      }
-      .checklist {
-        margin: 16px 0 0;
-        padding: 0;
-        list-style: none;
-        display: grid;
-        gap: 10px;
-      }
-      .checklist li {
-        position: relative;
-        padding-left: 28px;
-        color: rgba(244, 247, 251, 0.82);
-      }
-      .checklist li::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 20px;
-        height: 20px;
-        display: grid;
-        place-items: center;
-        border-radius: 50%;
-        background: rgba(92, 242, 160, 0.12);
-        color: var(--ok);
-        font-weight: 700;
-      }
-
-      .section-head {
-        display: grid;
-        gap: 10px;
-        margin-bottom: 18px;
-      }
-      .section-head h2,
-      .section-head h3 {
-        margin: 0;
-        font-size: clamp(1.6rem, 2.8vw, 2.3rem);
-        letter-spacing: -0.04em;
-      }
-      .section-head p {
-        margin: 0;
-        color: var(--muted);
-        max-width: 62ch;
-      }
-
-      .cards {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 14px;
-      }
-      .card,
-      .step,
-      .quote,
-      .contact {
-        border-radius: var(--radius-sm);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        background: var(--panel);
-        box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
-      }
-      .card {
-        padding: 18px;
-        min-height: 196px;
-      }
-      .icon {
-        width: 40px;
-        height: 40px;
-        border-radius: 12px;
-        display: grid;
-        place-items: center;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        margin-bottom: 14px;
-        font-size: 1rem;
-      }
-      .card h3 {
-        margin: 0 0 8px;
-        font-size: 1rem;
-      }
-      .card p {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.65;
-      }
-
-      .workflow {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 14px;
-      }
-      .step {
-        padding: 20px;
-      }
-      .num {
-        width: 38px;
-        height: 38px;
-        border-radius: 999px;
-        display: grid;
-        place-items: center;
-        margin-bottom: 12px;
-        background: linear-gradient(135deg, #f5f8ff, #dcebff);
-        color: #050608;
-        font-weight: 900;
-      }
-      .step h3 { margin: 0 0 8px; }
-      .step p { margin: 0; color: var(--muted); line-height: 1.68; }
-
-      .split {
-        display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 14px;
-      }
-      .quote {
-        padding: 22px;
-      }
-      .quote h3 {
-        margin: 0 0 12px;
-        font-size: 1.15rem;
-      }
-      .quote p {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.72;
-      }
-      .quote .checklist {
-        margin-top: 16px;
-      }
-
-      .contact {
-        padding: 22px;
-      }
-      .contact-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 18px;
-        flex-wrap: wrap;
-        padding-bottom: 18px;
-        margin-bottom: 18px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      }
-      .contact-brand {
-        display: grid;
-        gap: 10px;
-      }
-      .contact-signature {
-        display: grid;
-        gap: 3px;
-        margin-top: 2px;
-      }
-      .contact-signature strong {
-        font-size: 1.08rem;
-        letter-spacing: -0.04em;
-      }
-      .contact-signature span {
-        color: var(--muted);
-        font-size: 0.92rem;
-      }
-      .contact-mark {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.32);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-      }
-      .contact-meta {
-        display: grid;
-        gap: 8px;
-        text-align: right;
-        color: var(--muted);
-      }
-      .contact-meta a {
-        color: var(--text);
-      }
-      .contact-meta small {
-        color: var(--soft);
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        font-size: 0.78rem;
-      }
-      form {
-        display: grid;
-        gap: 12px;
-      }
-      .row {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-      }
-      label {
-        display: grid;
-        gap: 8px;
-        color: rgba(244, 247, 251, 0.86);
-        font-size: 0.88rem;
-      }
-      label span { font-weight: 600; }
-      input,
-      textarea {
-        width: 100%;
-        padding: 14px 16px;
-        border-radius: 14px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        background: rgba(4, 5, 8, 0.75);
-        color: var(--text);
-        outline: none;
-      }
-      textarea { min-height: 128px; resize: vertical; }
-      input::placeholder,
-      textarea::placeholder { color: rgba(244, 247, 251, 0.38); }
-      input:focus,
-      textarea:focus {
-        border-color: rgba(255, 255, 255, 0.26);
-        box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.07);
-      }
-
-      footer {
-        padding: 30px 0 40px;
-        color: var(--soft);
-      }
-      .footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 16px;
-        flex-wrap: wrap;
-        padding-top: 18px;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-      }
-      .footer-brand {
-        display: grid;
-        gap: 8px;
-        max-width: 34rem;
-      }
-      .footer-brand .brand-copy strong {
-        font-size: 1.02rem;
-      }
-      .footer-brand > span {
-        color: rgba(244, 247, 251, 0.62);
-        max-width: 32rem;
-        line-height: 1.6;
-      }
-      .footer-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        align-items: center;
-      }
-      .footer-links a { color: var(--soft); }
-      .footer-links a:hover { color: var(--text); }
-
-      @media (max-width: 1020px) {
-        .hero-grid,
-        .cards,
-        .workflow,
-        .split {
-          grid-template-columns: 1fr;
-        }
-      }
-      @media (max-width: 760px) {
-        .nav {
-          flex-wrap: wrap;
-        }
-        .nav-links {
-          width: 100%;
-          justify-content: space-between;
-          gap: 12px;
-          order: 3;
-        }
-        .row { grid-template-columns: 1fr; }
-        .stats { grid-template-columns: 1fr; }
-      }
-      @media (max-width: 600px) {
-        .nav-links {
-          display: none;
-        }
-        .hero {
-          padding-top: 28px;
-        }
-        .hero-actions .cta,
-        .footer-links a {
-          width: 100%;
-          justify-content: center;
-        }
-        .contact-meta {
-          text-align: left;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-    <header>
-      <div class="wrap nav">
+    <header class="site-header">
+      <div class="wrap nav-shell">
         <a class="brand" href="#top" aria-label="Amua TI — voltar ao topo">
-          <img class="brand-mark" src="assets/img/amua_ti_favicon.png" alt="" aria-hidden="true" />
-          <span class="brand-copy">
+          <img class="brand-mark" src="assets/img/amua_ti_favicon.png" alt="Logo da Amua TI" />
+          <div class="brand-copy">
             <strong>Amua TI</strong>
             <span>Tecnologia que sustenta o seu dia</span>
-          </span>
+          </div>
         </a>
 
-        <nav class="nav-links" aria-label="Navegação">
-          <a href="#servicos">Serviços</a>
-          <a href="#processo">Processo</a>
-          <a href="#diferenciais">Diferenciais</a>
+        <nav class="nav-links" aria-label="Navegação principal">
+          <a href="#strategia">Estratégia</a>
+          <a href="#ecosistema">Ecossistema</a>
+          <a href="#recursos">Recursos</a>
+          <a href="#impacto">Impacto</a>
           <a href="#contato">Contato</a>
         </nav>
 
-        <a class="cta primary" href="#contato">Solicitar diagnóstico</a>
+        <a class="button button-solid" href="#contato">Solicitar diagnóstico</a>
       </div>
     </header>
 
-    <main id="top" aria-label="Conteúdo principal">
+    <main id="top">
       <section class="hero" id="conteudo">
         <div class="wrap hero-grid">
-          <div>
-            <div class="eyebrow">Tecnologia que sustenta seu dia</div>
-            <h1>Tecnologia que <em>resolve</em> a operação.</h1>
+          <div class="hero-copy">
+            <div class="eyebrow">Página de impacto corporativo • Amua TI</div>
+            <h1>
+              Uma operação <em>mais previsível</em>, segura e orientada por valor.
+            </h1>
             <p class="lead">
-              A Amua TI trabalha perto da sua operação, com suporte próximo, implantação organizada e uma base técnica pensada para dar estabilidade, segurança e continuidade sem improviso.
+              A Amua TI está sendo apresentada como um ecossistema corporativo completo:
+              suporte de alto impacto, inteligência de dados operacionais, segurança digital,
+              conectividade em rede, hub de recursos verificados e um bloco estratégico com dicas de IA.
             </p>
 
             <div class="hero-actions">
-              <a class="cta primary" href="#contato">Quero um diagnóstico</a>
-              <a class="cta" href="https://wa.me/5511999999999" target="_blank" rel="noreferrer">Falar com a equipe</a>
+              <a class="button button-solid" href="#contato">Quero um diagnóstico</a>
+              <a class="button button-ghost" href="#recursos">Ver recursos verificados</a>
             </div>
 
             <div class="hero-points" aria-label="Destaques rápidos">
-              <span class="point">Atendimento humano</span>
-              <span class="point">Fala direta com a equipe</span>
-              <span class="point">Menos improviso, mais previsibilidade</span>
+              <span class="chip">Atendimento próximo</span>
+              <span class="chip">Escopo claro</span>
+              <span class="chip">Execução organizada</span>
+              <span class="chip">Marca oficial</span>
             </div>
 
-            <div class="micro">Do outro lado, você fala com uma equipe real — clara, próxima e sem jargão.</div>
+            <div class="microcopy">
+              Uma linguagem institucional, premium e sem excesso — com foco em confiança e clareza.
+            </div>
           </div>
 
-          <aside class="panel" aria-label="Resumo da proposta da Amua TI">
-            <div class="panel-top">
-              <div class="panel-kicker">Como a Amua TI cuida da operação</div>
-              <div class="panel-brand">
-                <img class="panel-mark" src="assets/img/amua_ti_logo_brand_crop.jpg" alt="Amua TI" />
-                <div class="panel-title">
-                  <strong>Amua TI</strong>
-                  <span>Escuta real, resposta clara e continuidade no dia a dia.</span>
-                </div>
-              </div>
-              <div class="panel-badges" aria-label="Assinaturas da proposta">
-                <span class="badge">Equipe próxima</span>
-                <span class="badge">Resposta clara</span>
-                <span class="badge">Acompanhamento</span>
-              </div>
-            </div>
-            <div class="panel-body">
-              <div class="stats">
-                <div class="stat">
-                  <b>Escuta e diagnóstico</b>
-                  <span>Entendimento claro do cenário e das prioridades.</span>
-                </div>
-                <div class="stat">
-                  <b>Resposta direta</b>
-                  <span>Comunicação objetiva para não travar a operação.</span>
-                </div>
-                <div class="stat">
-                  <b>Execução acompanhada</b>
-                  <span>Execução organizada, com escopo e acompanhamento.</span>
-                </div>
-              </div>
-              <ul class="checklist">
-                <li>Atendimento para pequenas e médias empresas</li>
-                <li>Infraestrutura, redes, segurança e suporte</li>
-              </ul>
+          <aside class="hero-panel" aria-label="Banner oficial da Amua TI">
+            <img
+              class="hero-image"
+              src="assets/img/amua_ti_logo_header.jpg"
+              alt="Banner oficial da Amua TI com logotipo e slogan Tecnologia que sustenta o seu dia"
+            />
+            <div class="hero-panel-copy">
+              <div class="panel-kicker">Identidade oficial</div>
+              <p>
+                O logo/banner oficial entra aqui como elemento de destaque, em uma área premium,
+                visualmente forte e sem ser usado no header ou no footer.
+              </p>
             </div>
           </aside>
         </div>
       </section>
 
-      <section id="servicos">
+      <section class="section" id="strategia">
         <div class="wrap">
           <div class="section-head">
-            <h2>O núcleo da oferta</h2>
+            <h2>Amua TI: nossa bússola estratégica</h2>
             <p>
-              Uma estrutura de serviços objetiva, profissional e fácil de entender — sem exageros, sem ruído e sem visual genérico.
+              Missão, visão e valores alinhados para sustentar crescimento com consistência,
+              postura profissional e foco em resultado.
             </p>
           </div>
 
-          <div class="cards">
-            <article class="card">
-              <div class="icon">⚙️</div>
-              <h3>Suporte técnico</h3>
-              <p>Atendimento remoto e presencial para resolver incidentes, dúvidas e rotinas operacionais com agilidade.</p>
+          <div class="three-cols">
+            <article class="glass-card">
+              <span class="label">Missão</span>
+              <h3>Resolver a operação com técnica e proximidade.</h3>
+              <p>
+                Entregar suporte e infraestrutura com comunicação clara, sem improviso e com foco em continuidade.
+              </p>
             </article>
-            <article class="card">
-              <div class="icon">🛡️</div>
-              <h3>Segurança digital</h3>
-              <p>Proteção de acessos, boas práticas e orientação para reduzir riscos no ambiente digital.</p>
+            <article class="glass-card">
+              <span class="label">Visão</span>
+              <h3>Ser a referência de confiança para ambientes corporativos.</h3>
+              <p>
+                Evoluir como marca de tecnologia que traduz complexidade em decisões objetivas e execução confiável.
+              </p>
             </article>
-            <article class="card">
-              <div class="icon">🌐</div>
-              <h3>Redes e infraestrutura</h3>
-              <p>Organização, estabilidade e ajustes para a base tecnológica trabalhar com menos ruído.</p>
-            </article>
-            <article class="card">
-              <div class="icon">☁️</div>
-              <h3>Nuvem e automação</h3>
-              <p>Integrações e automações para ganhar eficiência sem complicar a operação.</p>
+            <article class="glass-card">
+              <span class="label">Valores</span>
+              <h3>Clareza, resiliência, responsabilidade e impacto.</h3>
+              <p>
+                Cada contato e cada entrega reforçam um padrão de qualidade que sustenta o dia a dia da empresa.
+              </p>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="processo">
+      <section class="section section-alt" id="ecosistema">
         <div class="wrap">
           <div class="section-head">
-            <h2>Como funciona</h2>
-            <p>Fluxo enxuto, previsível e pensado para transmitir controle em cada etapa.</p>
+            <h2>Ecossistema corporativo de alto impacto</h2>
+            <p>
+              A proposta foi organizada em pilares claros para explicar o valor da Amua TI sem ruído.
+            </p>
           </div>
 
-          <div class="workflow">
-            <article class="step">
-              <div class="num">1</div>
-              <h3>Diagnóstico</h3>
-              <p>Entendemos o contexto, as dores e as prioridades para focar no que realmente importa primeiro.</p>
+          <div class="cards-grid">
+            <article class="feature-card">
+              <div class="icon">01</div>
+              <h3>Suporte de Alto Impacto</h3>
+              <p>Ecossistema com suporte preventivo, operacional e de emergência, preparado para garantir resiliência e continuidade.</p>
+              <ul>
+                <li>Suporte preventivo e acompanhamento</li>
+                <li>Suporte operacional do dia a dia</li>
+                <li>Resposta rápida em urgências</li>
+              </ul>
             </article>
-            <article class="step">
-              <div class="num">2</div>
-              <h3>Plano</h3>
-              <p>Definimos escopo, prioridades e próximos passos de forma objetiva e transparente.</p>
+
+            <article class="feature-card">
+              <div class="icon">02</div>
+              <h3>Inteligência de Dados Operacionais</h3>
+              <p>Gestão estratégica de backups e ativos de dados para decisões orientadas por informação e menos risco operacional.</p>
+              <ul>
+                <li>Backups e retenção</li>
+                <li>Inventário de ativos de dados</li>
+                <li>Visibilidade e rastreabilidade</li>
+              </ul>
             </article>
-            <article class="step">
-              <div class="num">3</div>
-              <h3>Implantação</h3>
-              <p>Executamos as melhorias com organização, acompanhamento e comunicação clara.</p>
+
+            <article class="feature-card">
+              <div class="icon">03</div>
+              <h3>Segurança Digital</h3>
+              <p>Blindagem proativa de ativos críticos com políticas, controles e boas práticas alinhadas ao ambiente corporativo.</p>
+              <ul>
+                <li>Acesso mínimo necessário</li>
+                <li>Proteção de credenciais</li>
+                <li>Monitoramento e endurecimento</li>
+              </ul>
             </article>
-            <article class="step">
-              <div class="num">4</div>
-              <h3>Suporte contínuo</h3>
-              <p>Seguimos perto para manter a operação estável, saudável e evoluindo com segurança.</p>
+
+            <article class="feature-card">
+              <div class="icon">04</div>
+              <h3>Conectividade em Rede</h3>
+              <p>Infraestrutura robusta para garantir sinergia global, acesso estável e operação com menos interrupções.</p>
+              <ul>
+                <li>Rede estruturada e estável</li>
+                <li>Conectividade entre times e filiais</li>
+                <li>Escalabilidade com controle</li>
+              </ul>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="diferenciais">
-        <div class="wrap split">
-          <article class="quote">
-            <h3>Por que a marca passa mais confiança</h3>
-            <p>
-              A página foi redesenhada para ficar mais personalizada, mais séria e menos com cara de template.
-            </p>
-            <ul class="checklist">
-              <li>Logo oficial usado nas posições certas</li>
-              <li>Hierarquia visual limpa e forte</li>
-              <li>Fundo escuro com presença premium</li>
-              <li>Textos curtos e diretos, sem excesso</li>
-            </ul>
-          </article>
-          <article class="quote">
-            <h3>O que isso comunica</h3>
-            <p>
-              Uma operação organizada, postura profissional e uma marca que transmite segurança antes mesmo da primeira conversa.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section id="contato">
-        <div class="wrap contact">
-          <div class="contact-top">
-            <div class="contact-brand">
-              <div class="section-head" style="margin:0; gap:6px;">
-                <h3>Vamos deixar sua TI mais previsível</h3>
-                <p>
-                  Conte o cenário da sua empresa e receba um direcionamento claro — sem pressão, sem jargão e com o próximo passo bem definido.
-                </p>
-              </div>
-              <div class="contact-signature">
-                <strong>Amua TI</strong>
-                <span>Contato e diagnóstico</span>
-              </div>
+      <section class="section" id="servicos">
+        <div class="wrap split-layout">
+          <div>
+            <div class="section-head left">
+              <h2>O que a Amua TI entrega na prática</h2>
+              <p>
+                Um conjunto de frentes complementares para consolidar um posicionamento corporativo sólido.
+              </p>
             </div>
-            <div class="contact-meta" aria-label="E-mail e contato rápido">
-              <small>E-mail oficial</small>
+
+            <div class="stack-list">
+              <article class="stack-item">
+                <span>Suporte</span>
+                <strong>Operação assistida com resposta clara.</strong>
+                <p>Menos improviso, mais previsibilidade e um canal direto para resolver incidentes.</p>
+              </article>
+              <article class="stack-item">
+                <span>Dados</span>
+                <strong>Backups, inventário e visibilidade.</strong>
+                <p>Controle dos dados operacionais para reduzir perdas e fortalecer a governança.</p>
+              </article>
+              <article class="stack-item">
+                <span>Segurança</span>
+                <strong>Blindagem dos ativos críticos.</strong>
+                <p>Medidas de proteção para manter acessos, máquinas e informações sob controle.</p>
+              </article>
+            </div>
+          </div>
+
+          <aside class="highlight-panel">
+            <img
+              src="assets/img/amua_ti_logo_brand_crop.jpg"
+              alt="Banner da marca Amua TI em composição horizontal"
+            />
+            <div>
+              <h3>Marca oficial em destaque</h3>
+              <p>
+                O banner promocional entra no suporte visual do site, reforçando a identidade oficial da Amua TI em uma área nobre da página.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="recursos">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>Hub de Downloads &amp; Recursos Verificados</h2>
+            <p>
+              Acesso premium a ferramentas úteis e páginas oficiais, com foco em praticidade e confiança.
+            </p>
+          </div>
+
+          <div class="resources-grid">
+            <a class="resource-card" href="https://www.microsoft.com/microsoft-365" target="_blank" rel="noreferrer">
+              <span class="resource-tag">Office</span>
+              <strong>Microsoft 365</strong>
+              <p>Pacote oficial de produtividade para empresas e equipes.</p>
+            </a>
+            <a class="resource-card" href="https://www.microsoft.com/pt-br/microsoft-365/microsoft-defender-for-business" target="_blank" rel="noreferrer">
+              <span class="resource-tag">Segurança</span>
+              <strong>Microsoft Defender for Business</strong>
+              <p>Proteção corporativa para dispositivos e usuários.</p>
+            </a>
+            <a class="resource-card" href="https://www.teamviewer.com/pt-br/" target="_blank" rel="noreferrer">
+              <span class="resource-tag">Acesso remoto</span>
+              <strong>TeamViewer</strong>
+              <p>Suporte remoto para assistência e resolução ágil.</p>
+            </a>
+            <a class="resource-card" href="https://anydesk.com/pt" target="_blank" rel="noreferrer">
+              <span class="resource-tag">Acesso remoto</span>
+              <strong>AnyDesk</strong>
+              <p>Conexão remota leve para suporte e manutenção.</p>
+            </a>
+            <a class="resource-card" href="https://www.7-zip.org/" target="_blank" rel="noreferrer">
+              <span class="resource-tag">Utilitários</span>
+              <strong>7-Zip</strong>
+              <p>Compactação e extração de arquivos com referência de mercado.</p>
+            </a>
+            <a class="resource-card" href="https://www.google.com/chrome/" target="_blank" rel="noreferrer">
+              <span class="resource-tag">Navegador</span>
+              <strong>Google Chrome</strong>
+              <p>Navegador oficial para rotinas modernas e extensões.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="ia">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>Dicas de IAs para acelerar produtividade</h2>
+            <p>
+              O novo card estratégico entra como uma ponte entre eficiência operacional e adoção inteligente de automação.
+            </p>
+          </div>
+
+          <div class="cards-grid ai-grid">
+            <article class="feature-card compact">
+              <div class="icon">IA</div>
+              <h3>Resuma antes de responder</h3>
+              <p>Use IA para condensar tickets, e-mails longos e mensagens internas sem perder contexto.</p>
+            </article>
+            <article class="feature-card compact">
+              <div class="icon">IA</div>
+              <h3>Padronize comunicações</h3>
+              <p>Crie respostas tipo para suporte, follow-up e status de projeto com tom corporativo consistente.</p>
+            </article>
+            <article class="feature-card compact">
+              <div class="icon">IA</div>
+              <h3>Analise logs e incidentes</h3>
+              <p>Peça ajuda para identificar padrões em logs, erros recorrentes e hipóteses de causa raiz.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-impact" id="impacto">
+        <div class="wrap impact-grid">
+          <div class="impact-copy">
+            <div class="eyebrow eyebrow-strong">0️⃣ Página de Impacto</div>
+            <h2>Uma experiência imersiva alinhada com os links oficiais do logo Amua TI.</h2>
+            <p>
+              Esta área consolida a presença da marca com visual premium, foco estratégico e acesso rápido aos canais e recursos centrais da operação.
+            </p>
+            <div class="impact-points">
+              <span>Visual escuro e elegante</span>
+              <span>Marca oficial em posições corretas</span>
+              <span>Mensagens claras e corporativas</span>
+            </div>
+          </div>
+
+          <div class="impact-card">
+            <img
+              src="assets/img/amua_ti_logo_header.jpg"
+              alt="Banner oficial da Amua TI"
+            />
+            <div class="impact-card-body">
+              <strong>Amua TI</strong>
+              <p>Estrutura visual forte para comunicar tecnologia, confiança e continuidade.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contato">
+        <div class="wrap contact-grid">
+          <div class="contact-copy">
+            <div class="section-head left">
+              <h2>Vamos estruturar a presença digital da Amua TI</h2>
+              <p>
+                Se quiser, esse mesmo site pode ser evoluído depois para formulário com captura de leads, integração com CRM e publicação em domínio próprio.
+              </p>
+            </div>
+
+            <div class="contact-channel">
+              <span>E-mail oficial</span>
               <a href="mailto:contato@amuati.com.br?subject=Quero%20um%20diagn%C3%B3stico%20da%20Amua%20TI">contato@amuati.com.br</a>
-              <a href="https://wa.me/5511999999999" target="_blank" rel="noreferrer">WhatsApp direto</a>
+            </div>
+
+            <div class="contact-channel">
+              <span>Atendimento</span>
+              <p>WhatsApp, e-mail e formulário podem ser conectados assim que o número oficial for confirmado.</p>
             </div>
           </div>
 
-          <form>
-            <div class="row">
-              <label>
-                <span>Seu nome</span>
-                <input type="text" placeholder="Seu nome" />
-              </label>
-              <label>
-                <span>Empresa</span>
-                <input type="text" placeholder="Nome da empresa" />
-              </label>
-            </div>
-            <div class="row">
-              <label>
-                <span>Seu e-mail</span>
-                <input type="email" placeholder="seuemail@empresa.com" />
-              </label>
-              <label>
-                <span>Seu WhatsApp</span>
-                <input type="tel" placeholder="(11) 99999-9999" />
-              </label>
-            </div>
+          <form class="contact-form">
             <label>
-              <span>Como podemos ajudar?</span>
-              <textarea placeholder="Descreva o que sua empresa precisa"></textarea>
+              <span>Seu nome</span>
+              <input type="text" placeholder="Seu nome" />
             </label>
-            <a class="cta primary" href="mailto:contato@amuati.com.br?subject=Quero%20um%20diagn%C3%B3stico%20da%20Amua%20TI">Solicitar diagnóstico</a>
+            <label>
+              <span>Empresa</span>
+              <input type="text" placeholder="Nome da empresa" />
+            </label>
+            <label>
+              <span>Seu e-mail</span>
+              <input type="email" placeholder="seuemail@empresa.com" />
+            </label>
+            <label>
+              <span>Seu WhatsApp</span>
+              <input type="tel" placeholder="(11) 99999-9999" />
+            </label>
+            <label class="full">
+              <span>Como podemos ajudar?</span>
+              <textarea placeholder="Descreva a necessidade da sua operação"></textarea>
+            </label>
+            <div class="form-actions full">
+              <a class="button button-solid" href="mailto:contato@amuati.com.br?subject=Quero%20um%20diagn%C3%B3stico%20da%20Amua%20TI">Solicitar diagnóstico</a>
+              <a class="button button-ghost" href="#recursos">Ver recursos</a>
+            </div>
           </form>
         </div>
       </section>
     </main>
 
-    <footer>
-      <div class="wrap footer">
-        <div class="footer-brand">
-          <a class="brand" href="#top" aria-label="Amua TI — voltar ao topo">
-            <img class="brand-mark" src="assets/img/amua_ti_favicon.png" alt="" aria-hidden="true" />
-            <span class="brand-copy">
-              <strong>Amua TI</strong>
-              <span>Suporte próximo, escuta real e continuidade para a operação.</span>
-            </span>
-          </a>
-        </div>
-        <div class="footer-links" aria-label="Links de contato">
-          <a href="#top">Topo</a>
-          <a href="#servicos">Serviços</a>
+    <footer class="site-footer">
+      <div class="wrap footer-shell">
+        <a class="brand" href="#top" aria-label="Amua TI — voltar ao topo">
+          <img class="brand-mark" src="assets/img/amua_ti_favicon.png" alt="Logo da Amua TI" />
+          <div class="brand-copy">
+            <strong>Amua TI</strong>
+            <span>Tecnologia que sustenta o seu dia</span>
+          </div>
+        </a>
+
+        <div class="footer-links" aria-label="Links do rodapé">
+          <a href="#strategia">Estratégia</a>
+          <a href="#ecosistema">Ecossistema</a>
+          <a href="#recursos">Recursos</a>
           <a href="#contato">Contato</a>
-          <a href="mailto:contato@amuati.com.br">E-mail</a>
-          <a href="https://wa.me/5511999999999" target="_blank" rel="noreferrer">WhatsApp</a>
         </div>
       </div>
     </footer>
